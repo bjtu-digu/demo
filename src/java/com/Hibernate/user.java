@@ -12,20 +12,22 @@ import java.util.Date;
  * @author zqhPC
  */
 public class user {
-    int bar_id;
+    int pic_id;
      int user_id;
-    String topic;
+    String user_name;
     int exist;
-    String bar_name;
-    Date create_time;
-    int bar_head;
+    String password;
+    Date register_date;
+    int is_teacher;
+    int is_manager;
+    String mail;
 
-    public int getBar_id() {
-        return bar_id;
+    public int getPic_id() {
+        return pic_id;
     }
 
-    public void setBar_id(int bar_id) {
-        this.bar_id = bar_id;
+    public void setPic_id(int pic_id) {
+        this.pic_id = pic_id;
     }
 
     public int getUser_id() {
@@ -36,12 +38,12 @@ public class user {
         this.user_id = user_id;
     }
 
-    public String getTopic() {
-        return topic;
+    public String getUser_name() {
+        return user_name;
     }
 
-    public void setTopic(String topic) {
-        this.topic = topic;
+    public void setUser_name(String user_name) {
+        this.user_name = user_name;
     }
 
     public int getExist() {
@@ -52,28 +54,46 @@ public class user {
         this.exist = exist;
     }
 
-    public String getBar_name() {
-        return bar_name;
+    public String getPassword() {
+        return password;
     }
 
-    public void setBar_name(String bar_name) {
-        this.bar_name = bar_name;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
-    public Date getCreate_time() {
-        return create_time;
+    public Date getRegister_date() {
+        return register_date;
     }
 
-    public void setCreate_time(Date create_time) {
-        this.create_time = create_time;
+    public void setRegister_date(Date register_date) {
+        this.register_date = register_date;
     }
 
-    public int getBar_head() {
-        return bar_head;
+    public int getIs_teacher() {
+        return is_teacher;
     }
 
-    public void setBar_head(int bar_head) {
-        this.bar_head = bar_head;
+    public void setIs_teacher(int is_teacher) {
+        this.is_teacher = is_teacher;
     }
-   
+
+    public int getIs_manager() {
+        return is_manager;
+    }
+
+    public void setIs_manager(int is_manager) {
+        this.is_manager = is_manager;
+    }
+
+    public String getMail() {
+        return mail;
+    }
+
+    public void setMail(String mail) {
+        this.mail = mail;
+    }
+    
+
+ 
 }

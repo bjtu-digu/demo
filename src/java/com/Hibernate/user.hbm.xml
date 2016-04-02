@@ -2,6 +2,19 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
   <class name="com.Hibernate.user" table="user"/>
-  
+  <id name="user_id" column="user_id">
+            <generator class="assigned"/>  
+       </id>
+
+       <property name="user_name" column="user_name"/>
+       <property name="password" column="password"/>
+       <property name="register_date" column="register_date"/>
+       <property name="pic_id" column="pic_id"/>
+       <property name="mail" column="mail"/>
+       <property name="is_teacher" column="is_teacher"/>
+       <property name="is_manager" column="is_manager"/>
+       <property name="exist" column="exist"/>
+       
+
   
 </hibernate-mapping>
