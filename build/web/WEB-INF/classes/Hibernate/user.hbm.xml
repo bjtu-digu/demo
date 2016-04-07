@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="Hibernate.user" table="user">
+  <id column="user_id" name="user_id">
+    <generator class="increment"/>
+  </id>
+  <property column="user_name" name="user_name"/>
+  <property column="password" name="password"/>
+  <property column="register_date" name="register_date"/>
+  <property column="pic_id" name="pic_id"/>
+  <property column="mail" name="mail"/>
+  <property column="is_teacher" name="is_teacher"/>
+  <property column="is_manager" name="is_manager"/>
+  <property column="exist" name="exist"/>
+</class>
+</hibernate-mapping>

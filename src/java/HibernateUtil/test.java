@@ -5,44 +5,41 @@
  */
 package HibernateUtil;
 
-import com.Hibernate.user;
+import Hibernate.user;
+import org.hibernate.HibernateException;
 import org.hibernate.Session;
-
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+import HibernateUtil.HibernateUtil;
 /**
  *
  * @author zqhPC
  */
 public class test {
      public static void main(String[] args) {
-
-         createAndStorePerson();
-
-        HibernateUtil.getSessionFactory().close();
+         try {
+       
+             Session s=HibernateUtil.currentSession();
+             HibernateUtil.beginTransaction();//开始操作
+             
+             
+              user u=new user();
+              u.setUser_name("wertiyuio");
+              s.save(u);
+              
+              
+             HibernateUtil.commitTransaction();//结束操作
+             HibernateUtil.closeSession();
+                 } catch (HibernateException e) {
+             e.printStackTrace();
+         }
+       
+         
+     }
 
 }
 
  
 
-    private static void createAndStorePerson() {
-
-        Session session =                   // 通过Session工厂获取Session对象
-
-HibernateUtil.getSessionFactory().getCurrentSession();
-
-        session.beginTransaction();         //开始事务
-
-        
-
-        user u = new user();
-        u.setUser_id(99);
-      
-
-        session.save(u);
-
-        
-
-        session.getTransaction().commit(); // 提交事务
-
-    }
-
-}
+   
