@@ -32,7 +32,7 @@ public class LoginAction extends Action {
         //int back = LoginModule.login(name, pass);
 
         if (false) {
-            SessionFactory sessionFactory = HibernateUtil.HibernateUtil.getSessionFactory();
+            //SessionFactory sessionFactory = HibernateUtil.HibernateUtil.getSessionFactory();
             //out.println("用户不存在");
         } else {
             //out.println("登陆成功");
