@@ -10,13 +10,13 @@
     <mapping resource="com/Hibernate/user.hbm.xml"/>
     <mapping resource="com/Hibernate/bar.hbm.xml"/>
     <mapping resource="com/Hibernate/chat.hbm.xml"/>
-     <mapping resource="com/Hibernate/msg.hbm.xml"/>
-      <mapping resource="com/Hibernate/pic.hbm.xml"/>
-       <mapping resource="com/Hibernate/post.hbm.xml"/>
-        <mapping resource="com/Hibernate/reply.hbm.xml"/>
-         <mapping resource="com/Hibernate/star_bar.hbm.xml"/>
-          <mapping resource="com/Hibernate/star_user.hbm.xml"/>
-           <mapping resource="com/Hibernate/teacher.hbm.xml"/>
+    <mapping resource="com/Hibernate/msg.hbm.xml"/>
+    <mapping resource="com/Hibernate/pic.hbm.xml"/>
+    <mapping resource="com/Hibernate/post.hbm.xml"/>
+    <mapping resource="com/Hibernate/reply.hbm.xml"/>
+    <mapping resource="com/Hibernate/star_bar.hbm.xml"/>
+    <mapping resource="com/Hibernate/star_user.hbm.xml"/>
+    <mapping resource="com/Hibernate/teacher.hbm.xml"/>
     <mapping/>
   </session-factory>
 </hibernate-configuration>

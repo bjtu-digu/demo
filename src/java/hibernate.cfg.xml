@@ -7,16 +7,16 @@
     <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/digu</property>
     <property name="hibernate.connection.username">root</property>
     <property name="hibernate.connection.password">root</property>
-    <mapping resource="com/Hibernate/user.hbm.xml"/>
-    <mapping resource="com/Hibernate/bar.hbm.xml"/>
-    <mapping resource="com/Hibernate/chat.hbm.xml"/>
-     <mapping resource="com/Hibernate/msg.hbm.xml"/>
-      <mapping resource="com/Hibernate/pic.hbm.xml"/>
-       <mapping resource="com/Hibernate/post.hbm.xml"/>
-        <mapping resource="com/Hibernate/reply.hbm.xml"/>
-         <mapping resource="com/Hibernate/star_bar.hbm.xml"/>
-          <mapping resource="com/Hibernate/star_user.hbm.xml"/>
-           <mapping resource="com/Hibernate/teacher.hbm.xml"/>
-    <mapping/>
+    <mapping resource="Hibernate/user.hbm.xml"/>
+    <mapping resource="Hibernate/bar.hbm.xml"/>
+    <mapping resource="Hibernate/chat.hbm.xml"/>
+    <mapping resource="Hibernate/msg.hbm.xml"/>
+    <mapping resource="Hibernate/pic.hbm.xml"/>
+    <mapping resource="Hibernate/post.hbm.xml"/>
+    <mapping resource="Hibernate/reply.hbm.xml"/>
+    <mapping resource="Hibernate/star_bar.hbm.xml"/>
+    <mapping resource="Hibernate/star_user.hbm.xml"/>
+    <mapping resource="Hibernate/teacher.hbm.xml"/>
+   
   </session-factory>
 </hibernate-configuration>
