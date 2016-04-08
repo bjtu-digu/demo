@@ -5,7 +5,9 @@
  */
 package com.struts.action;
 
+import com.Module.LoginModule;
 import com.struts.actionForm.LoginForm;
+import java.io.PrintWriter;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.Cookie;
@@ -29,18 +31,24 @@ public class LoginAction extends Action {
         LoginForm form1 = (LoginForm) form;
         String name = form1.getName();
         String pass = form1.getPass();
-        //int back = LoginModule.login(name, pass);
+        int back = LoginModule.login(name, pass);
+        
+        String alert = "";
 
-        if (false) {
+        if (back == 0) {
             //SessionFactory sessionFactory = HibernateUtil.HibernateUtil.getSessionFactory();
             //out.println("用户不存在");
+            alert = "<script>alert('用户名或密码错误')</script>";
+            request.setAttribute("alert", alert);
+            return mapping.findForward("self");
         } else {
-            //out.println("登陆成功");
             Cookie cookie = new Cookie("name", name);
             response.addCookie(cookie);
+            alert = "<script>alert('登录成功')</script>";
             //response.sendRedirect(request.getHeader("Referer"));
             //response.("Search.jsp");
         }
+        request.setAttribute("alert", alert);
         return mapping.findForward("search");
     }
 

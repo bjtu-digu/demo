@@ -24,10 +24,12 @@
         <action path="/login" type="com.struts.action.LoginAction"
                 name="loginForm" scope="request">
             <forward name="search" path="/Search.jsp"/>
+            <forward name="self" path="/Login.jsp"/>
         </action>
         <action path="/register" type="com.struts.action.RegisterAction"
                 name="registerForm" scope="request">
             <forward name="search" path="/Search.jsp"/>
+            <forward name="self" path="/Register.jsp"/>
         </action>
     </action-mappings>
     

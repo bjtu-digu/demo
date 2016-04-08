@@ -3,9 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/bai/Desktop/demo/src/java/HibernateUtil/HibernateUtil.java</file>
-            <file>file:/C:/Users/bai/Desktop/demo/src/java/com/struts/action/LoginAction.java</file>
-            <file>file:/C:/Users/bai/Desktop/demo/src/java/Hibernate/user.java</file>
+            <file>file:/G:/大三/digu/web/Msg.jsp</file>
+            <file>file:/G:/大三/digu/src/java/com/Module/LoginModule.java</file>
+            <file>file:/G:/大三/digu/web/WEB-INF/web.xml</file>
+            <file>file:/G:/大三/digu/src/java/com/Module/RegisterModule.java</file>
+            <file>file:/G:/大三/digu/web/Search.jsp</file>
+            <file>file:/G:/大三/digu/web/Login.jsp</file>
+            <file>file:/G:/大三/digu/web/WEB-INF/struts-config.xml</file>
+            <file>file:/G:/大三/digu/src/java/com/struts/action/LoginAction.java</file>
+            <file>file:/G:/大三/digu/src/java/com/struts/action/RegisterAction.java</file>
+            <file>file:/G:/大三/digu/web/Register.jsp</file>
         </group>
     </open-files>
 </project-private>

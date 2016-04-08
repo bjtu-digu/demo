@@ -15,18 +15,23 @@ import org.hibernate.Session;
  * @author bai
  */
 public class LoginModule {
-    public static  int login(String name, String password){
-        Session s=HibernateUtil.currentSession();
+
+    public static int login(String name, String password) {
+        Session s = HibernateUtil.currentSession();
         HibernateUtil.beginTransaction();
-        String hql = "FROM User WHERE username = ? AND password = ?";
-        List<user>list = s.createQuery(hql).setString(0, name).setString(1, password).list();  
-        System.out.println(hql);
+        //String hql = "FROM User WHERE user_name = ? AND password = ?";
+        //List<user>list = s.createQuery(hql).setString(0, name).setString(1, password).list(); 
+
+        String sql = "select * from user where user_name = ? and password = ?";
+        List<user> list = s.createSQLQuery(sql).setString(0, name).setString(1, password).list();
+        //System.out.println(hql);
         HibernateUtil.commitTransaction();//结束操作
-             HibernateUtil.closeSession();
-             if (list.size() > 0) {
+        HibernateUtil.closeSession();
+        if (list.size() > 0) {
             return 1;
+        } else {
+            return 0;
         }
-        else return 0;
 
     }
 }
