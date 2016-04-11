@@ -9,6 +9,8 @@
     <form-beans>
         <form-bean name="loginForm" type="com.struts.actionForm.LoginForm"/>
         <form-bean name="registerForm" type="com.struts.actionForm.RegisterForm"/>
+        <form-bean name="searchForm" type="com.struts.actionForm.SearchForm"/>
+        <form-bean name="starBarform" type="com.struts.actionForm.StarBarForm"/>
     </form-beans>
     
     <global-exceptions>
@@ -30,6 +32,17 @@
                 name="registerForm" scope="request">
             <forward name="search" path="/Search.jsp"/>
             <forward name="self" path="/Register.jsp"/>
+        </action>
+        <action path="/search" type="com.struts.action.SearchAction"
+                name="searchForm" scope="request">
+            <forward name="createbar" path="/CreateBar.jsp"/>
+            <forward name="bar" path="/Bar.jsp"/>
+        </action>
+        <action path="/star_bar" type="com.struts.action.StarBarAction"
+                name="StarBarForm" scope="request">
+        </action>
+        <action path="/unstar_bar" type="com.struts.action.UnStarBarAction"
+                name="StarBarForm" scope="request">
         </action>
     </action-mappings>
     
