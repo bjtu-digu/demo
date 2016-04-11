@@ -37,6 +37,9 @@ public class RegisterModule {
 
         String sql = "select * from user where user_name = ?";
         List<user> list = s.createSQLQuery(sql).setString(0, name).list();
+        
+        HibernateUtil.commitTransaction();//结束操作
+        HibernateUtil.closeSession();
 
         if (list.size() > 0) {
             return 1;

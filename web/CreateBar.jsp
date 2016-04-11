@@ -37,7 +37,7 @@
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
 				<!--表单和按钮-->
-				<form class="navbar-form navbar-left" role="search" role='search' action = 'search'>
+				<form class="navbar-form navbar-left" role="search" role='search' action = 'search.do'>
 					<div class="form-group">
 						<input type="text" name = 'name'; class="form-control" placeholder="Search"></input>
 					</div>
@@ -61,7 +61,7 @@
 		</div>
 
 		<!--创建贴吧表单-->
-		<form class="form-horizontal"  action = "create" method = "get">
+		<form class="form-horizontal"  action = "create.do" method = "get">
 			<div class="form-group">
 			<label for="inputEmail3" class="col-sm-2 control-label">Name：</label>
 				<div class="col-sm-10">

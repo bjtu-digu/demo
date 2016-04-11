@@ -12,20 +12,18 @@ import org.hibernate.Session;
 
 /**
  *
- * @author bai
+ * @author zxq
  */
-public class StarBarModule {
+public class UnStarBarModule {
 
-    //关注贴吧
-    public static void StarBar(String user_id, String bar_id) {
+    //取关贴吧
+    public static void UnStarBar(String bar_id, String user_id) {
         Session s = HibernateUtil.currentSession();
         HibernateUtil.beginTransaction();
-        String sql = "insert into star_bar(user_id,bar_id) VALUES('" + user_id + "','" + bar_id + "')";
-
+        String sql = "delete from star_bar where bar_id = '" + bar_id + "' and user_id = '" + user_id + "'";
         s.createSQLQuery(sql).executeUpdate();
         HibernateUtil.commitTransaction();//结束操作
         HibernateUtil.closeSession();
-
     }
     //获得用户ID
 
@@ -33,7 +31,7 @@ public class StarBarModule {
         Session s = HibernateUtil.currentSession();
         HibernateUtil.beginTransaction();
         String sql = "select user_id from user where user_name = '" + name + "'";
-        List<user> list = s.createSQLQuery(sql).list();
+         List<user> list = s.createSQLQuery(sql).list();
         HibernateUtil.commitTransaction();//结束操作
         HibernateUtil.closeSession();
         return String.valueOf(list.get(0).getUser_id());

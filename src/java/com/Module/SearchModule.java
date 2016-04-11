@@ -5,6 +5,7 @@
  */
 package com.Module;
 
+import Hibernate.bar;
 import Hibernate.user;
 import HibernateUtil.HibernateUtil;
 import java.util.List;
@@ -19,8 +20,8 @@ public class SearchModule {
 	public static int checkBar(String name){
                 Session s = HibernateUtil.currentSession();
                 HibernateUtil.beginTransaction();
-		String sql = "select exist from bar where bar_name = '" + name + "'";
-		List<user> list = s.createSQLQuery(sql).setString(0, name).list();
+		String sql = "select * from bar where bar_name = '" + name + "'";
+		List<bar> list = s.createSQLQuery(sql).list();
 		HibernateUtil.commitTransaction();//结束操作
                 HibernateUtil.closeSession();
                 if (list.size() > 0) {
@@ -35,9 +36,9 @@ public class SearchModule {
                 Session s = HibernateUtil.currentSession();
                 HibernateUtil.beginTransaction();
 		String sql = "select user_id from user where user_name = '" + name + "'";
-		List<user> list = s.createSQLQuery(sql).setString(0, name).list();
+		List<user> list = s.createSQLQuery(sql).list();
 		HibernateUtil.commitTransaction();//结束操作
                 HibernateUtil.closeSession();
-		return list.toString();
+		return String.valueOf(list.get(0).getUser_id());
 	}
 }

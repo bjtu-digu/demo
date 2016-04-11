@@ -1,4 +1,4 @@
-<%--<%@ page import="com.Control.SearchCtrl"%>--%>
+<%@ page import="com.Control.SearchCtrl"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -26,7 +26,7 @@
             }
         </style>
         <!-- 数据准备 -->
-        <%--
+        <%
                 SearchCtrl searchCtrl = new SearchCtrl();	//实例化控制器
                 String UserName = "";
                 Cookie[] cook =request.getCookies();//用一个Cookie数组来接收
@@ -36,7 +36,7 @@
                                         UserName = cook[j].getValue();	//取cookie的值  
                         }
                 }
-        --%>
+        %>
     </head>
     <body>
 
@@ -57,10 +57,10 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <%--
+                    <%
                             if(UserName.equals("")||UserName.length() == 0)
                                     out.print("<li>"
-                                    +"	<form action = 'login' class='navbar-form'>"
+                                    +"	<form action = 'login.do' class='navbar-form'>"
                                     +"		<button onClick='login()' href='Login.jsp' type='button' class='btn ' data-toggle='modal' data-target='#myModal'>登录</button>"
                                     +"	</form>"
                                     +"</li>"
@@ -75,7 +75,7 @@
                                                     +"	</ul>"
                                                     +"</li>");
                             }
-                    --%>
+                    %>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container -->
@@ -90,7 +90,7 @@
         </div>
 
         <!--表单和按钮-->
-        <form role="search" action = "search" method = "get">
+        <form role="search" action = "search.do" method = "get">
             <div class="form-group col-md-6">
                 <input type="text" name = "name" class="form-control" placeholder="Search"></input>
             </div>
