@@ -10,7 +10,12 @@
         <form-bean name="loginForm" type="com.struts.actionForm.LoginForm"/>
         <form-bean name="registerForm" type="com.struts.actionForm.RegisterForm"/>
         <form-bean name="searchForm" type="com.struts.actionForm.SearchForm"/>
-        <form-bean name="starBarform" type="com.struts.actionForm.StarBarForm"/>
+        <form-bean name="starBarForm" type="com.struts.actionForm.StarBarForm"/>
+        <form-bean name="createForm" type="com.struts.actionForm.CreateForm"/>
+        <form-bean name="signForm" type="com.struts.actionForm.SignForm"/>
+        <form-bean name="barTeacherForm" type="com.struts.actionForm.BarTeacherForm"/>
+        <form-bean name="chatingForm" type="com.struts.actionForm.ChatingForm"/>
+        <form-bean name="postingForm" type="com.struts.actionForm.PostingForm"/>
     </form-beans>
     
     <global-exceptions>
@@ -38,11 +43,28 @@
             <forward name="createbar" path="/CreateBar.jsp"/>
             <forward name="bar" path="/Bar.jsp"/>
         </action>
+        <action path="/create" type="com.struts.action.CreateAction"
+                name="createForm" scope="request">
+            <forward name="bar" path="/Bar.jsp"/>
+            <forward name="login" path="/Login.jsp"/>
+        </action>
         <action path="/star_bar" type="com.struts.action.StarBarAction"
                 name="StarBarForm" scope="request">
         </action>
         <action path="/unstar_bar" type="com.struts.action.UnStarBarAction"
                 name="StarBarForm" scope="request">
+        </action>
+        <action path="/sign" type="com.struts.action.SignAction"
+                name="StarBarForm" scope="request">
+        </action>
+        <action path="/bar_teacher" type="com.struts.action.BarTeacherAction"
+                name="barTeacherForm" scope="request">
+        </action>
+        <action path="/chating" type="com.struts.action.ChatingAction"
+                name="chatingForm" scope="request">
+        </action>
+        <action path="/posting" type="com.struts.action.PostingAction"
+                name="postingForm" scope="request">
         </action>
     </action-mappings>
     

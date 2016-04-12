@@ -23,7 +23,7 @@ public class LoginModule {
         //List<user>list = s.createQuery(hql).setString(0, name).setString(1, password).list(); 
 
         String sql = "select * from user where user_name = ? and password = ?";
-        List<user> list = s.createSQLQuery(sql).setString(0, name).setString(1, password).list();
+        List<user> list = s.createSQLQuery(sql).addEntity(user.class).setString(0, name).setString(1, password).list();
         //System.out.println(hql);
         HibernateUtil.commitTransaction();//结束操作
         HibernateUtil.closeSession();

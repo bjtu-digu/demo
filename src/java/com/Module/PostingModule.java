@@ -32,8 +32,8 @@ public class PostingModule {
 	public static int checkID(String user_id){
                 Session s = HibernateUtil.currentSession();
                 HibernateUtil.beginTransaction();
-		String sql = "select exist from user where user_id = '" + user_id + "'";
-		List<user> list = s.createSQLQuery(sql).list();
+		String sql = "select * from user where user_id = '" + user_id + "'";
+		List<user> list = s.createSQLQuery(sql).addEntity(user.class).list();
 		HibernateUtil.commitTransaction();//结束操作
                 HibernateUtil.closeSession();
                 if (list.size() > 0) {
@@ -47,8 +47,8 @@ public class PostingModule {
 	public static int checkBar(String bar_id){
                 Session s = HibernateUtil.currentSession();
                 HibernateUtil.beginTransaction();
-		String sql = "select exist from bar where bar_id = '" + bar_id + "'";
-                List<bar> list = s.createSQLQuery(sql).list();
+		String sql = "select * from bar where bar_id = '" + bar_id + "'";
+                List<bar> list = s.createSQLQuery(sql).addEntity(bar.class).list();
 		HibernateUtil.commitTransaction();//结束操作
                 HibernateUtil.closeSession();
                 if (list.size() > 0) {
@@ -62,8 +62,8 @@ public class PostingModule {
 	public static String getUserID(String name){
                 Session s = HibernateUtil.currentSession();
                 HibernateUtil.beginTransaction();
-		String sql = "select user_id from user where user_name = '" + name + "'";
-		List<user> list = s.createSQLQuery(sql).list();
+		String sql = "select * from user where user_name = '" + name + "'";
+		List<user> list = s.createSQLQuery(sql).addEntity(user.class).list();
                 HibernateUtil.commitTransaction();//结束操作
                 HibernateUtil.closeSession();
                 return String.valueOf(list.get(0).getUser_id());

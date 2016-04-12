@@ -20,8 +20,8 @@ public class CreateBarModule {
 	public static int checkBar(String name){
                 Session s = HibernateUtil.currentSession();
                 HibernateUtil.beginTransaction();
-		String sql = "select exist from bar where bar_name = '" + name + "'";
-		List<bar> list = s.createSQLQuery(sql).setString(0, name).list();
+		String sql = "select * from bar where bar_name = '" + name + "'";
+		List<bar> list = s.createSQLQuery(sql).addEntity(bar.class).setString(0, name).list();
                 HibernateUtil.commitTransaction();//结束操作
                 HibernateUtil.closeSession();
                 
@@ -33,7 +33,7 @@ public class CreateBarModule {
                 Session s = HibernateUtil.currentSession();
                 HibernateUtil.beginTransaction();
 		String sql = "select exist from user where user_id = '" + id + "'";
-		List<bar> list = s.createSQLQuery(sql).setString(0, id).list();
+		List<user> list = s.createSQLQuery(sql).addEntity(user.class).setString(0, id).list();
                 HibernateUtil.commitTransaction();//结束操作
                 HibernateUtil.closeSession();
                 

@@ -38,9 +38,9 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
                     <!--表单和按钮-->
-                    <form class="navbar-form navbar-left" role="search" role='search' action = 'search.do'>
+                    <form class="navbar-form navbar-left" role="search" role='search' action = 'search.do' >
                         <div class="form-group">
-                            <input type="text" name = 'name'; class="form-control" placeholder="Search"></input>
+                            <input type="text" name = 'name' class='form-control' placeholder="Search"></input>
                         </div>
                         <button type="submit" class="btn btn-primary">进入贴吧</button>
                     </form>

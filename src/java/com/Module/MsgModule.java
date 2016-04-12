@@ -32,9 +32,9 @@ public class MsgModule {
 	public static String getUserName(String user_id){
                 Session s = HibernateUtil.currentSession();
                 HibernateUtil.beginTransaction();
-		String sql = "Select user_name from user"
+		String sql = "Select * from user"
 				+ " where user_id = "+user_id ;
-		 List<user> list = s.createSQLQuery(sql).list();
+		 List<user> list = s.createSQLQuery(sql).addEntity(user.class).list();
                  HibernateUtil.commitTransaction();//结束操作
                  HibernateUtil.closeSession();
 
@@ -45,21 +45,21 @@ public class MsgModule {
 	public static String getUserID(String name){
                 Session s = HibernateUtil.currentSession();
                 HibernateUtil.beginTransaction();
-		String sql = "select user_id from user where user_name = '" + name + "'";
-		List<user> list = s.createSQLQuery(sql).list();
+		String sql = "select * from user where user_name = '" + name + "'";
+		List<user> list = s.createSQLQuery(sql).addEntity(user.class).list();
                 HibernateUtil.commitTransaction();//结束操作
                 HibernateUtil.closeSession();
                 if(list.isEmpty())
                     return null;
-                return String.valueOf(list.get(0).getExist());
+                return String.valueOf(list.get(0).getUser_id());
 	    }
 	
 	//获取某条对话内容
 	public static String getMsg(String Msg_id){
                 Session s = HibernateUtil.currentSession();
                 HibernateUtil.beginTransaction();
-		String sql = "select msg from msg where msg_id = '" + Msg_id + "'";
-		List<msg> list = s.createSQLQuery(sql).list();
+		String sql = "select * from msg where msg_id = '" + Msg_id + "'";
+		List<msg> list = s.createSQLQuery(sql).addEntity(msg.class).list();
                 HibernateUtil.commitTransaction();//结束操作
                 HibernateUtil.closeSession();
                 return list.get(0).getMsg();

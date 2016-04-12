@@ -23,8 +23,8 @@ public class PostModule {
     public static String getBarID(String post_id) {
         Session s = HibernateUtil.currentSession();
         HibernateUtil.beginTransaction();
-        String sql = "select bar_id from post where post_id = " + post_id;
-        List<post> list = s.createSQLQuery(sql).list();
+        String sql = "select * from post where post_id = " + post_id;
+        List<post> list = s.createSQLQuery(sql).addEntity(post.class).list();
         HibernateUtil.commitTransaction();//结束操作
         HibernateUtil.closeSession();
         return String.valueOf(list.get(0).getBar_id());
@@ -34,7 +34,7 @@ public class PostModule {
     public static List<bar> getBarInfo(String bar_id) {
         Session s = HibernateUtil.currentSession();
         HibernateUtil.beginTransaction();
-        String sql = "select user_id,topic,bar_name,create_time,bar_head from bar where bar_id = '" + bar_id + "'";
+        String sql = "select * from bar where bar_id = '" + bar_id + "'";
 //		ArrayList<String> get = new ArrayList<String>();
 //		get.add("user_id");
 //		get.add("int");
@@ -44,7 +44,7 @@ public class PostModule {
 //		get.add("date");
 //		get.add("bar_head");
 //		get.add("int");
-        List<bar> list = s.createSQLQuery(sql).list();
+        List<bar> list = s.createSQLQuery(sql).addEntity(bar.class).list();
         HibernateUtil.commitTransaction();//结束操作
         HibernateUtil.closeSession();
         return list;
@@ -57,7 +57,7 @@ public class PostModule {
         end = "100000";
         Session s = HibernateUtil.currentSession();
         HibernateUtil.beginTransaction();
-        String sql = "select reply_id,reply_date,reply_msg,user_id from reply where post_id = '" + post_id + "' LIMIT " + begin + "," + end;
+        String sql = "select * from reply where post_id = '" + post_id + "' LIMIT " + begin + "," + end;
 //		ArrayList<String> get = new ArrayList<String>();
 //		get.add("reply_id");
 //		get.add("int");
@@ -67,7 +67,7 @@ public class PostModule {
 //		get.add("String");
 //		get.add("user_id");
 //		get.add("int");
-        List<reply> list = s.createSQLQuery(sql).list();
+        List<reply> list = s.createSQLQuery(sql).addEntity(reply.class).list();
         HibernateUtil.commitTransaction();//结束操作
         HibernateUtil.closeSession();
         return list;
@@ -77,9 +77,9 @@ public class PostModule {
     public static String getUserName(String user_id) {
         Session s = HibernateUtil.currentSession();
         HibernateUtil.beginTransaction();
-        String sql = "Select user_name from user"
+        String sql = "Select * from user"
                 + " where user_id = " + user_id;
-        List<user> list = s.createSQLQuery(sql).list();
+        List<user> list = s.createSQLQuery(sql).addEntity(user.class).list();
         HibernateUtil.commitTransaction();//结束操作
         HibernateUtil.closeSession();
         return list.get(0).getUser_name();
@@ -89,7 +89,7 @@ public class PostModule {
     public static List<post> getFirstInfo(String post_id) {
         Session s = HibernateUtil.currentSession();
         HibernateUtil.beginTransaction();
-        String sql = "select user_id,post_name,post_msg,post_date from post where post_id = '" + post_id + "'";
+        String sql = "select * from post where post_id = '" + post_id + "'";
 //		ArrayList<String> get = new ArrayList<String>();
 //		get.add("user_id");
 //		get.add("int");
@@ -99,7 +99,7 @@ public class PostModule {
 //		get.add("String");
 //		get.add("post_date");
 //		get.add("String");
-        List<post> list = s.createSQLQuery(sql).list();
+        List<post> list = s.createSQLQuery(sql).addEntity(post.class).list();
         HibernateUtil.commitTransaction();//结束操作
         HibernateUtil.closeSession();
         return list;
@@ -109,8 +109,8 @@ public class PostModule {
     public static String getUserID(String name) {
         Session s = HibernateUtil.currentSession();
         HibernateUtil.beginTransaction();
-        String sql = "select user_id from user where user_name = '" + name + "'";
-        List<user> list = s.createSQLQuery(sql).list();
+        String sql = "select * from user where user_name = ?";
+        List<user> list = s.createSQLQuery(sql).addEntity(user.class).setString(0, name).list();
         HibernateUtil.commitTransaction();//结束操作
         HibernateUtil.closeSession();
         return String.valueOf(list.get(0).getUser_id());
@@ -120,8 +120,8 @@ public class PostModule {
     public static String checkTeacher(String user_id) {
         Session s = HibernateUtil.currentSession();
         HibernateUtil.beginTransaction();
-        String sql = "select exist from user where user_id = '" + user_id + "' and is_teacher = 1";
-        List<user> list = s.createSQLQuery(sql).list();
+        String sql = "select * from user where user_id = '" + user_id + "' and is_teacher = 1";
+        List<user> list = s.createSQLQuery(sql).addEntity(user.class).list();
         HibernateUtil.commitTransaction();//结束操作
         HibernateUtil.closeSession();
         if(list.isEmpty())
@@ -133,7 +133,7 @@ public class PostModule {
     public static List<reply> getPoster(String post_id, String begin, String end, String poster_id) {
         Session s = HibernateUtil.currentSession();
         HibernateUtil.beginTransaction();
-        String sql = "select reply_id,reply_date,reply_msg,user_id from reply where post_id = '" + post_id + "' and user_id = '" + poster_id + "' LIMIT " + begin + "," + end;
+        String sql = "select * from reply where post_id = '" + post_id + "' and user_id = '" + poster_id + "' LIMIT " + begin + "," + end;
 //		ArrayList<String> get = new ArrayList<String>();
 //		get.add("reply_id");
 //		get.add("int");
@@ -143,7 +143,7 @@ public class PostModule {
 //		get.add("String");
 //		get.add("user_id");
 //		get.add("int");
-        List<reply> list = s.createSQLQuery(sql).list();
+        List<reply> list = s.createSQLQuery(sql).addEntity(reply.class).list();
         HibernateUtil.commitTransaction();//结束操作
         HibernateUtil.closeSession();
         return list;
@@ -154,7 +154,7 @@ public class PostModule {
     public static List<reply> getTeacher(String post_id, String begin, String end) {
         Session s = HibernateUtil.currentSession();
         HibernateUtil.beginTransaction();
-        String sql = "select reply_id,reply_date,reply_msg,reply.user_id from "
+        String sql = "select reply.* from "
                 + "reply LEFT JOIN `user` on `user`.user_id = reply.user_id where is_teacher = 1 and post_id = '" + post_id + "' LIMIT " + begin + "," + end;
 //		ArrayList<String> get = new ArrayList<String>();
 //		get.add("reply_id");
@@ -165,7 +165,7 @@ public class PostModule {
 //		get.add("String");
 //		get.add("user_id");
 //		get.add("int");
-        List<reply> list = s.createSQLQuery(sql).list();
+        List<reply> list = s.createSQLQuery(sql).addEntity(reply.class).list();
         HibernateUtil.commitTransaction();//结束操作
         HibernateUtil.closeSession();
         return list;

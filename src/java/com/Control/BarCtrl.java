@@ -8,16 +8,12 @@ import com.Module.SearchModule;
 import java.util.List;
 
 public class BarCtrl extends Ctrl{
-	
 	String page;
 	String name;
-	List<bar> BarInfo;		//�����Ϣ��
-	List<user> TeacherInfo;	//��ʦ��Ϣ��
-	List<post> PostList;	//�����б�
-//////////////////////////
-//��̬�����	
-//////////////////////////
-	//��ȡ�û�ID
+	List<bar> BarInfo;	
+	List<user> TeacherInfo;	
+	List<post> PostList;	
+
 	public String getUserID1(String name){
 		return SearchModule.getUserID(name);
 	}
@@ -26,12 +22,12 @@ public class BarCtrl extends Ctrl{
 		this.page = page;
 		this.name = name;
                 int i = 0;
-		BarInfo = BarModule.getBarInfo(name);//��ȡ�����Ϣ
-		TeacherInfo = BarModule.getTeacherInfo(String.valueOf(BarInfo.get(0).getBar_id()));	//��ȡ��ʦ��Ϣ
+		BarInfo = BarModule.getBarInfo(name);
+		TeacherInfo = BarModule.getTeacherInfo(String.valueOf(BarInfo.get(0).getBar_id()));
 		
 		int pageNum = Integer.parseInt(page);
 		PostList = BarModule.getPostList(String.valueOf(BarInfo.get(0).getBar_id()), 
-				((pageNum-1)*10+1) + "", ((pageNum-1)*10+10) + "");//��ȡ�����б�
+				((pageNum-1)*10+1) + "", ((pageNum-1)*10+10) + "");
 	}
 	//������
 	public boolean CheckBarName(){

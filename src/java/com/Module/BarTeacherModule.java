@@ -7,6 +7,7 @@ package com.Module;
 
 import Hibernate.bar;
 import Hibernate.post;
+import Hibernate.user;
 import HibernateUtil.HibernateUtil;
 import java.util.List;
 import org.hibernate.Session;
@@ -31,11 +32,11 @@ public class BarTeacherModule {
                 Session s = HibernateUtil.currentSession();
                 HibernateUtil.beginTransaction();
 		//获取吧主id
-		String sql = "select user_id from bar where bar_id = '" + bar_id + "'";
-		List<bar> barer = s.createSQLQuery(sql).list();
+		String sql = "select * from bar where bar_id = '" + bar_id + "'";
+		List<bar> barer = s.createSQLQuery(sql).addEntity(bar.class).list();
 		
 		sql = "insert into msg(msg,type,sender_id,reader_id,msg_date)"
-			+ "VALUES('" + bar_id + "','2','" + user_id + "','" + barer + "',SYSDATE())";
+			+ "VALUES('" + bar_id + "','2','" + user_id + "','" + barer.get(0).getUser_id() + "',SYSDATE())";
 		int back = s.createSQLQuery(sql).executeUpdate();
                 HibernateUtil.commitTransaction();//结束操作
                 HibernateUtil.closeSession();
@@ -45,8 +46,8 @@ public class BarTeacherModule {
 	public static String getUserID(String name){
                 Session s = HibernateUtil.currentSession();
                 HibernateUtil.beginTransaction();
-		String sql = "select user_id from user where user_name = '" + name + "'";
-		List<post> list = s.createSQLQuery(sql).list();
+		String sql = "select * from user where user_name = '" + name + "'";
+		List<user> list = s.createSQLQuery(sql).addEntity(user.class).list();
                 HibernateUtil.commitTransaction();//结束操作
                 HibernateUtil.closeSession();
                 return String.valueOf(list.get(0).getUser_id());

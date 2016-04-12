@@ -95,7 +95,7 @@
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
 				<!--表单和按钮-->
-				<form class="navbar-form navbar-left" role="search" role='search' action = 'search.do'>
+                                <form class="navbar-form navbar-left" role="search" role='search' action = 'search.do' method="post">
 					<div class="form-group">
 						<input type="text" name = 'name'; class="form-control" placeholder="Search"></input>
 					</div>
@@ -185,14 +185,14 @@
 					if(!(UserName.equals("")||UserName.length() == 0)){
 						//若没有关注贴吧，输出关注按钮
 						if(!barCtrl.checkStarBar(barCtrl.getUserID(UserName))){
-							out.print("<form role='star_bar' action = 'star_bar.do' method = 'get'>");
+							out.print("<form role='star_bar' action = 'star_bar.do' method = 'post'>");
 								out.print("<input type='text' name = 'bar_id' style='display:none' value ="+barCtrl.getBarId()+" >");
 								out.print("<button class='btn btn-danger' type='submit'><span class='glyphicon glyphicon-plus'></span>关注</button>");
 							out.print("</form>");
 						}
 						//如果关注了，输出取关按钮
 						else{
-							out.print("<form role='unstar_bar' action = 'unstar_bar.do' method = 'get'>");
+							out.print("<form role='unstar_bar' action = 'unstar_bar.do' method = 'post'>");
 							out.print("<input type='text' name = 'bar_id' style='display:none' value ="+barCtrl.getBarId()+" >");
 							out.print("<button class='btn btn-danger' type='submit'><span class='glyphicon glyphicon-plus'></span>取消关注</button>");
 						out.print("</form>");
@@ -206,7 +206,7 @@
 						if(barCtrl.checkStarBar(barCtrl.getUserID(UserName))){
 							//若没签到，输出
 							if(!barCtrl.checkSign(barCtrl.getUserID(UserName))){
-								out.print("<form role='sign' action = 'sign.do' method = 'get'>");
+								out.print("<form role='sign' action = 'sign.do' method = 'post'>");
 									out.print("<input type='text' name = 'bar_id' style='display:none' value ="+barCtrl.getBarId()+" >");
 									out.print("<button class='btn btn-info' type='submit'><span class='glyphicon glyphicon-pencil'></span>签到</button>");
 								out.print("</form>");
@@ -241,7 +241,7 @@
 								if(barCtrl.checkTeacher(UserName) && barCtrl.getTeacherNum()<2){
 									//如果用户已经是本吧老师，不输出
 									if(!barCtrl.checkBarTeacher(barCtrl.getBarId(), barCtrl.getUserID1(UserName))){
-										out.print("<form role='bar_techer' action = 'bar_teacher.do' method = 'get'>");
+										out.print("<form role='bar_techer' action = 'bar_teacher.do' method = 'post'>");
 											out.print("<input type='text' name = 'bar_id' style='display:none' value ="+barCtrl.getBarId()+" >");
 											out.print("<input type='text' name = 'ask' style='display:none' value ="+barCtrl.getBarId()+" >");
 											out.print("<div class='col-md-4 col-sm-4 col-xs-4'>");
@@ -262,7 +262,7 @@
 					out.print("<div id='change' style='margin-top: 10px;height: 150px;' class='pre-scrollable'><!--聊天内容框-->");
 					out.print("</div>");
 					out.print("<div style='margin-top: 10px;' class='input-group'>");
-						out.print("<form role='chating' action = 'chating.do' method = 'get'>");
+						out.print("<form role='chating' action = 'chating.do' method = 'post'>");
 							out.print("<input type='text' name = 'bar_id' style='display:none' value ="+barCtrl.getBarId()+" >" );
 							out.print("<input name='msg' type='text' class='form-control' placeholder='说点什么'>");
 							out.print("<span class='input-group-btn'>");
@@ -315,7 +315,7 @@
 					out.print("</div>");
 				}
 				else{
-					out.print("<form role='posting' action = 'posting.do' method = 'get'>");
+					out.print("<form role='posting' action = 'posting.do' method = 'post'>");
 					out.print("<div class='col-md-9 col-sm-9 col-xs-9'>");
 					out.print("<input type='text' name = 'bar_id' style='display:none' value ="+barCtrl.getBarId()+" >" );
 					out.print("<label><span class='glyphicon glyphicon-pencil'></span>发表新帖</label>");

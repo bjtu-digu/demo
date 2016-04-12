@@ -28,8 +28,9 @@ public class SearchAction extends Action {
         if (SearchModule.checkBar(name) != 1) {
             return mapping.findForward("createbar");
         } else {
-            ActionForward newForward = new ActionForward(mapping.findForward( "bar").getPath()+ "?name=" + name + "&page=1");
-            return newForward;
+            request.setAttribute("name", name);
+            request.setAttribute("page", "1");
+            return mapping.findForward("bar");
         }
     }
 
