@@ -55,7 +55,8 @@ public class CreateAction extends Action {
         CreateBarModule.createBar(id, topic, name);
         //out.println("创建成功");
         //response.sendRedirect("bar?page=1&name=" + name);
-        ActionForward newForward = new ActionForward(mapping.findForward( "bar").getPath()+ "?name=" + name);
+        ActionForward newForward = new ActionForward("search.do"+ "?name=" + name + "&page=1");
+        newForward.setRedirect(true);
         return newForward;
     }
 

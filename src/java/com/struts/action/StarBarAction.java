@@ -38,6 +38,7 @@ public class StarBarAction extends Action {
         String bar_id = starBar.getBar_id();
         StarBarModule.StarBar(StarBarModule.getUserID(UserName), bar_id);
         ActionForward actionForward = new ActionForward(request.getHeader("Referer"));
+        actionForward.setRedirect(true);
         return actionForward; 
     }
 

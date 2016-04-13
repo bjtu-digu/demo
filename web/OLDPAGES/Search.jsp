@@ -90,7 +90,7 @@
         </div>
 
         <!--表单和按钮-->
-        <form role="search" action = "search.do" method = "post">
+        <form role="search" action="search.do" method="get">
             <div class="form-group col-md-6">
                 <input type="text" name = "name" class="form-control" placeholder="Search"></input>
             </div>

@@ -1,0 +1,244 @@
+body {
+    background-color: rgb(38,38,38);
+    font-family: "微软雅黑","宋体",Arial;
+    font-size: 1.4em;
+    line-height: 26px;
+}
+.form-group {
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.input-group-addon, .form-control {
+    background-color: transparent;
+    border-color: transparent;
+    -webkit-border-radius: 0;
+    box-shadow: 0 0 0 #ffffff;
+}
+
+nav .container{
+	padding-left: 120px;
+	padding-right: 120px;
+}
+
+.title{
+	background-image:url(../img/logo_title.jpg);
+	-webkit-background-size: 1260px 160px;
+}
+
+
+.footer-log {
+    color: rgb(157,157,157);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+
+}
+
+.footer-log a {
+    color: rgb(157,157,157);
+    padding-left: 10px;
+    margin-left: 10px;
+    border-left: 1.5px solid rgb(157,157,157);
+}
+
+.footer-log a:hover{
+    color: #fff;
+    text-decoration: none;
+}
+
+.mab-panel {
+    position: relative;
+    margin-bottom: 30px;
+    padding: 15px 20px;
+    width: 640px;
+    background-color: #FFF;
+    border: 1px solid #dfdfdf;
+}
+
+.clearfix {
+    zoom: 1;
+}
+
+.content {
+    padding-top: 56px;
+    position: relative;
+    margin: 0 auto;
+    width: 950px;
+}
+
+article{
+    margin:0 auto;
+    display: block;
+}
+
+.mab-panel{
+    background-color: #F2F2F2;
+    box-shadow: 0 1px 1px rgba(0,0,0,.05);
+}
+
+.mab-p-info {
+    position: relative;
+    padding-left: 54px;
+    min-height: 50px;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+div{
+    display: block;
+}
+
+a:hover{
+    text-decoration: none;
+}
+
+.mab-p-i-avatar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.mab-p-i-name {
+    font-size: 16px;
+    color: #c6b5dc;
+}
+
+.mab-p-i-time {
+    margin-top: 6px;
+    font-size: 14px;
+    color: #AAA;
+}
+
+.mab-p-gps {
+    position: absolute;
+    right: 0;
+    bottom: 3px;
+    color: #AAA;
+    padding-left: 18px;
+    font-size: 14px;
+}
+
+.mab-p-h1 {
+    margin: 10px 0 15px 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 36px;
+}
+
+.page-header h1{
+    color: #777;
+}
+
+.page-header{
+    border-bottom: 1px solid #777;
+}
+
+h1 small{
+    color: rgb(89,89,89);
+}
+
+.mab-p-title {
+    display: block;
+    color: #4c4c4d;
+    font-size: 18px;
+    font-weight: bold;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.mab-p-content {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #484848;
+}
+
+p {
+    margin: 0 0 10px;
+    line-height: 24px;
+}
+
+.mab-p-count {
+    position: relative;
+    margin: 14px 0 7px 0;
+    font-size: 14px;
+    color: #AAA;
+}
+
+.mab-pc-style {
+    color: inherit;
+}
+
+.mab-p-space {
+    position: relative;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+}
+
+.mab-p-icon-point {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    margin-top: -2px;
+    margin-right: -2px;
+    width: 4px;
+    height: 4px;
+    background-color: #AAA;
+    border-radius: 50%;
+}
+
+.mab-pc-style {
+    color: inherit;
+}
+
+.pagination li a { 
+    background-color: #F2F2F2;
+}
+
+.pagination li a:hover{ 
+    background-color: #E8E8E8;
+}
+
+.asidePanel {
+    margin-left: 20px;
+}
+
+.aside {
+    padding: 15px 20px;
+    width: 260px;
+    background-color: #F2F2F2;
+    border: 1px solid #dfdfdf;
+    box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    
+}
+
+.fl{
+    float: left;
+}
+
+.mainLeft {
+    float: left;
+    margin-bottom: 50px;
+}
+
+.well{
+    background-color: #F2F2F2;
+    border-radius: 2px;
+}
+
+.fc{
+    border: 1px solid #ccc;
+}
+
+textarea{
+    resize: none;
+}

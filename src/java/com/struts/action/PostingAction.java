@@ -23,6 +23,7 @@ public class PostingAction extends Action {
 
     @Override
     public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
+        response.setContentType("text/html;charset=UTF-8");
         PostingForm posting = (PostingForm) form;
         
         String UserName = "";
@@ -43,7 +44,12 @@ public class PostingAction extends Action {
         String post_msg = posting.getPost_msg();
         System.out.println(bar_id + "," + post_name + "," + post_msg);
         PostingModule.posting(bar_id, PostingModule.getUserID(UserName), post_name, post_msg);
-        ActionForward actionForward = new ActionForward(request.getHeader("Referer"));
+        
+        request.setAttribute("name", form);
+        String a = request.getContextPath();
+        ActionForward actionForward = new ActionForward();
+        actionForward.setPath(request.getHeader("Referer"));
+        actionForward.setRedirect(true);
         return actionForward; 
     }
 

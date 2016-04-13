@@ -1,93 +1,123 @@
-<%@ page language="java" contentType="text/html; charset=GB2312"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html lang="zh-CN">
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>创建贴吧</title>
-
-	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<title>创建</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.theme.min.css">
+	<link rel="stylesheet" type="text/css" href="css/create.css">
 	<style type="text/css">
 		body{
-			padding-top: 70px;
+			padding-top: 50px;
 		}
 	</style>
 
 </head>
 
 <body>
-
-	<!--导航条-->
-	<nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
-		<div class="container">
-			<!-- Brand and toggle get grouped for better mobile display -->
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="Search.jsp">一纸贴吧系统</a>
-			</div>
-
-			<!-- Collect the nav links, forms, and other content for toggling -->
-			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-
-				<!--表单和按钮-->
-				<form class="navbar-form navbar-left" role="search" role='search' action = 'search.do'>
-					<div class="form-group">
-						<input type="text" name = 'name'; class="form-control" placeholder="Search"></input>
-					</div>
-					<button type="submit" class="btn btn-primary">进入贴吧</button>
-				</form>
-			</div>
-
-			<!-- Collect the nav links, forms, and other content for toggling -->
-			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-			</div><!-- /.navbar-collapse -->
-		</div><!-- /.container -->
-	</nav><!--导航条结束-->
-
-
-
-
 	<div class="container">
-		
-		<div class="page-header" style="margin-top:70px" >
-			<label>创建贴吧</label>
+		<!--导航条-->
+		<nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
+			<div class="container">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+
+					<img class="navbar-brand" src="img/logo.png" style="height: 50px;width: 50px;">
+					<a class="navbar-brand" href="#">嘀咕</a>
+
+					<!--系统logo的图片-->
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+					<!--表单和按钮-->
+					<form class="navbar-form navbar-left" role="search" action = 'search.do' method="get">
+						<div class="form-group">
+							<span class="glyphicon glyphicon-search" style="color: rgb(157,157,157);"></span>
+							<input type="text" class="form-control" placeholder="Search" name = 'name'></input>
+					</div>
+					<button type="submit" class="btn btn-primary">搜索私密圈</button>
+				</form>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav navbar-right">
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+								用户名
+								<span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+								<li>
+									<a href="#">用户中心</a>
+								</li>
+								<li>
+									<a href="#">注销</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<!-- /.navbar-collapse -->
+			</div>
+			<!-- /.navbar-collapse -->
 		</div>
+		<!-- /.container -->
+	</nav>
+	<!--导航条结束-->
+</div>
 
-		<!--创建贴吧表单-->
-		<form class="form-horizontal"  action = "create.do" method = "post">
-			<div class="form-group">
-			<label for="inputEmail3" class="col-sm-2 control-label">Name：</label>
-				<div class="col-sm-10">
-					<input type="text" class="form-control" name="name" id="inputEmail3" placeholder="Name">
-				</div>
+<form class="form-horizontal"  action = "create.do" method = "post">
+	<div class="container">
+		<div class="content col-md-4 col-md-push-4 col-xs-12 col-sm-12">
+			<h2>创建私密圈</h2>
+			<hr>
+			<div style="margin-top: 10px;" class="input-group">
+				<input type="text" class="form-control" placeholder="请输入私密圈的名字" name="name">
+				<input type="text" class="form-control" placeholder="请输入私密圈的主题" name="type">
+				<span class="input-group-btn">
+					<button type="submit" class="btn btn-primary">创建</button>
+				</span>
 			</div>
-			<div class="form-group">
-				<label for="inputPassword3" class="col-sm-2 control-label">Type：</label>
-				<div class="col-sm-10">
-					<input type="text" class="form-control" name="type" id="inputPassword3" placeholder="Type">
-				</div>
-			</div>
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<button type="submit" class="btn btn-default">Sign in</button>
-				</div>
-			</div>
-		</form>
-
+			<!-- /input-group -->
+		</div>
 	</div>
-	
-	<!--这里的顺序不能打乱，不然下拉菜单不显示-->
-	<script src="js/bootstrap.js" type="text/javascript"></script>
-	<script src="js/jquery-2.1.1.min.js"></script>
-	<script src="js/jquery-2.1.1.js"></script>
-	<script src="js/bootstrap.min.js" type="text/javascript"></script>
-	<script src="js/npm.js" type="text/javascript"></script>
+</form>
+
+<!--页尾-->
+<footer class="col-md-12 footer-log">
+	<div class="text-center">
+		© 2016 天天组
+		<a href="#">联系我们</a>
+		<a href="#" target="_blank">QQ交流群:77590762</a>
+		<a href="#" target="_blank">意见反馈</a>
+		<script type="text/javascript">
+				var cnzz_protocol = (("https:" == document.location.protocol) ? " https://"
+						: " http://");
+				document
+						.write(unescape("%3Cspan id='cnzz_stat_icon_1253509620'%3E%3C/span%3E%3Cscript src='"
+								+ cnzz_protocol
+								+ "s23.cnzz.com/z_stat.php%3Fid%3D1253509620%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));
+			</script>
+		<!--站长统计代码-->
+	</div>
+</footer>
+
+<!--这里的顺序不能打乱，不然下拉菜单不显示-->
+<script src="js/bootstrap.js" type="text/javascript"></script>
+<script src="js/jquery-2.1.1.min.js"></script>
+<script src="js/jquery-2.1.1.js"></script>
+<script src="js/bootstrap.min.js" type="text/javascript"></script>
+<script src="js/npm.js" type="text/javascript"></script>
 </body>
 </html>

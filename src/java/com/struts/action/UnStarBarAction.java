@@ -35,6 +35,7 @@ public class UnStarBarAction extends Action {
         String bar_id = request.getParameter("bar_id");
         UnStarBarModule.UnStarBar(bar_id, UnStarBarModule.getUserID(UserName));
         ActionForward actionForward = new ActionForward(request.getHeader("Referer"));
+        actionForward.setRedirect(true);
         return actionForward; 
     }
 

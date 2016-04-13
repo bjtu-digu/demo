@@ -43,6 +43,7 @@ public class ChatingAction extends Action {
         //DBCore.Execute(sql);
         //response.sendRedirect(request.getHeader("Referer"));
         ActionForward actionForward = new ActionForward(request.getHeader("Referer"));
+        actionForward.setRedirect(true);
         return actionForward; 
     }
 

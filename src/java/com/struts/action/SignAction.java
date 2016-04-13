@@ -39,6 +39,7 @@ public class SignAction extends Action {
         SignModule.Sign(bar_id, SignModule.getUserID(UserName));
         //response.sendRedirect(request.getHeader("Referer"));
         ActionForward actionForward = new ActionForward(request.getHeader("Referer"));
+        actionForward.setRedirect(true);
         return actionForward; 
     }
 

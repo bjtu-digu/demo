@@ -257,6 +257,8 @@ public class BarModule {
         List<reply> list = s.createSQLQuery(sql).addEntity(reply.class).list();
         HibernateUtil.commitTransaction();//结束操作
         HibernateUtil.closeSession();
+        if(list.isEmpty())
+            return null;
         return String.valueOf(list.get(0).getUser_id());
     }
 }
