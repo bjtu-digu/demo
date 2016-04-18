@@ -58,26 +58,29 @@ public class RegisterModuleNGTest {
      * checkRegister方法的测试 (属于类RegisterModule)。
      */
     @Test
-    public void testCheckRegister() {
+    public void testCheckRegister1() {
        
         String name1 = "Tin";
         int expResult1 = 1;
         int result1 = RegisterModule.checkRegister(name1);
         assertEquals(result1, expResult1);
-        // TODO 检查生成的测试代码并删除失败的默认调用。
-         /*fail
-         String name2 = "qqq";
+       
+    }
+     @Test
+    public void testCheckRegister2() {
+       
+        String name2 = "qqq";
         int expResult2 = 1;
         int result2 = RegisterModule.checkRegister(name2);
         assertEquals(result2, expResult2);
-        */
-        
-                  /*fail
-          String name3 = "iii";
+    }
+     @Test
+    public void testCheckRegister3() {
+       
+           String name3 = "iii";
         int expResult3 = 1;
         int result3 = RegisterModule.checkRegister(name3);
         assertEquals(result3, expResult3);
-                 */
     }
     
 }

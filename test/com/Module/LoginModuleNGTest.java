@@ -41,27 +41,32 @@ public class LoginModuleNGTest {
      * login方法的测试 (属于类LoginModule)。
      */
     @Test
-    public void testLogin() {
+    public void testLogin1() {
        
         String name1 = "";
         String password1 = "";
         int expResult1 = 0;
         int result1 = LoginModule.login(name1, password1);
         assertEquals(result1, expResult1);
-      /*fail
+     
+        
+    }
+     @Test
+     public void testLogin2() {
         String name2 = "hhhhhh";
         String password2 = "hhhhhh";
         int expResult2 = 1;
         int result2 = LoginModule.login(name2, password2);
         assertEquals(result2, expResult2);
-        */
-          /*fail
+     }
+     @Test
+     public void testLogin3() {
+       
         String name3 = "jjjjjjj";
         String password3 = "jjjjjjj";
         int expResult3 = 1;
         int result3 = LoginModule.login(name3, password3);
         assertEquals(result3, expResult3);
-                   */
-    }
-    
+                   
+     }
 }
