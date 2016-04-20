@@ -74,8 +74,8 @@
                     <ul class="nav navbar-nav navbar-right">
                         <%                                            if (UserName.equals("") || UserName.length() == 0) {
                                 out.print("<li>"
-                                        + "	<form action='login.do' class='navbar-form'>"
-                                        + "		<button type='button' class='btn '><a class='btn' href='Login.jsp' onClick='Login()'>登录</a></button>"
+                                        + "	<div class='navbar-form'>"
+                                        + "		<a href='Login.jsp' onClick='Login()'><button class='btn'>登录</button></a>"
                                         + "</li>"
                                         + "<li><a href='Register.jsp' onClick='Register()'>注册</a></li>");
                             } else {

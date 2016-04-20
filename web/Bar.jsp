@@ -125,9 +125,8 @@
                                 <%
                                     if (UserName.equals("") || UserName.length() == 0) {
                                         out.print("<li>"
-                                                + "<form action = 'login.do' class='navbar-form'>"
-                                                + "<button onClick='login()' href='Login.jsp' type='button' class='btn ' data-toggle='modal' data-target='#myModal'>登录</button>"
-                                                + "</form>"
+                                                + "	<div class='navbar-form'>"
+                                                + "<a href='Login.jsp' onClick='Login()'><button class='btn'>登录</button></a>"+ "</form>"
                                                 + "</li>"
                                                 + "<li><a href='Register.jsp'>注册</a></li>");
                                     } else {
@@ -137,7 +136,7 @@
                                                 + "<span class='caret'></span></a>"
                                                 + "<ul class='dropdown-menu' role='menu' aria-labelledby='dropdownMenu1'>"
                                                 + "<li><a href='user?user_id=" + barCtrl.getUserID1(UserName) + "'>用户中心</a></li>"
-                                                + "<li><a href='logout'>注销</a></li>"
+                                                + "<li><a href='logout.do'>注销</a></li>"
                                                 + "<li role='separator' class='divider'></li>"
                                                 + "</ul>"
                                                 + "</li>");

@@ -1,8 +1,14 @@
-package test.Module;
 
+
+import Hibernate.bar;
+import Hibernate.user;
 import java.util.ArrayList;
 
 import com.Module.BarModule;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
 
 import junit.framework.TestCase;
 
@@ -31,34 +37,42 @@ public class BarModuleTest extends TestCase {
 		assertEquals(1, n);
 	}
 
-	public void testGetBarInfo() {
-		ArrayList<String> als = BarModule.getBarInfo("Test");
-		ArrayList<String> testArrayList = new ArrayList<String>();
-		testArrayList.add("3");
-		testArrayList.add("5");
-		testArrayList.add("personal");
-		testArrayList.add("Test");
-		testArrayList.add("2015-09-28");
-		testArrayList.add("1");
-		assertEquals(testArrayList, als);
+	public void testGetBarInfo() throws ParseException {
+		List<bar> als = BarModule.getBarInfo("Test");
+                bar newbar = new bar();
+                newbar.setBar_id(3);
+                newbar.setUser_id(5);
+                newbar.setTopic("personal");
+                newbar.setBar_name("Test");
+                
+                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd ");  
+                Date date = sdf.parse("2015-09-28"); 
+                newbar.setCreate_time(date);
+                
+                newbar.setBar_head(1);
+
+//		testArrayList.add("3");
+//		testArrayList.add("5");
+//		testArrayList.add("personal");
+//		testArrayList.add("Test");
+//		testArrayList.add("2015-09-28");
+//		testArrayList.add("1");
+		assertEquals(newbar.getBar_head(), als.get(0).getBar_head());
+                assertEquals(newbar.getBar_id(), als.get(0).getBar_id());
+                assertEquals(newbar.getBar_name(), als.get(0).getBar_name());
+                assertEquals(newbar.getUser_id(), als.get(0).getUser_id());
 	}
 
 	public void testGetBarOwnerInfo() {
-		ArrayList<String> als = BarModule.getBarOwnerInfo("3");
-		ArrayList<String> testArrayList = new ArrayList<String>();
-		testArrayList.add("3");
-		testArrayList.add("≤Ã¿∂ÃÏ");
-		assertEquals(testArrayList, als);
-	}
-
-	public void testGetTeacherInfo() {
-		ArrayList<String> als = BarModule.getTeacherInfo("3");
-		ArrayList<String> testArrayList = new ArrayList<String>();
-		testArrayList.add("10");
-		testArrayList.add("tin");
-		testArrayList.add("12");
-		testArrayList.add("cao");
-		assertEquals(testArrayList, als);
+		List<user> als = BarModule.getBarOwnerInfo("3");
+                user newuser = new user();
+                
+                newuser.setUser_id(3);
+                newuser.setUser_name("Ëî°ËìùÂ§©");
+		//testArrayList.add("3");
+		//testArrayList.add("ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ");
+		assertEquals(newuser.getUser_id(), als.get(0).getUser_id());
+                assertEquals(newuser.getUser_name(), als.get(0).getUser_name());
 	}
 
 
