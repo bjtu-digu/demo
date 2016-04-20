@@ -51,7 +51,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand">一纸贴吧系统</a>
+                <a class="navbar-brand">私密圈</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -94,7 +94,7 @@
             <div class="form-group col-md-6">
                 <input type="text" name = "name" class="form-control" placeholder="Search"></input>
             </div>
-            <button type="submit" class="btn btn-primary">进入贴吧</button>
+            <button type="submit" class="btn btn-primary">进入私密圈</button>
         </form><!--表单结束-->
 
         <!--这里的顺序不能打乱，不然下拉菜单不显示-->

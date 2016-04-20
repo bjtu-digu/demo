@@ -5,8 +5,8 @@
  */
 package com.struts.action;
 
-import com.Module.PostingModule;
-import com.struts.actionForm.PostingForm;
+import com.Module.ReplyModule;
+import com.struts.actionForm.ReplyForm;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -19,13 +19,16 @@ import org.apache.struts.action.ActionMapping;
  *
  * @author zxq
  */
-public class PostingAction extends Action {
+public class ReplyAction extends Action {
 
     @Override
     public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
-        response.setContentType("text/html;charset=UTF-8");
-        PostingForm posting = (PostingForm) form;
+        ReplyForm reply = (ReplyForm) form;
         
+        String bar_id = reply.getBar_id();
+        String post_id = reply.getPost_id();
+        String reply_msg = reply.getReply_msg();
+        //String user_id = request.getParameter("user_id");
         String UserName = "";
         Cookie[] cook = request.getCookies();//用一个Cookie数组来接收
         if (cook != null) {
@@ -36,14 +39,8 @@ public class PostingAction extends Action {
                 }
             }
         }
-//        String bar_id = request.getParameter("bar_id");
-//        String post_name = request.getParameter("post_name");
-//        String post_msg = request.getParameter("post_msg");
-        String bar_id = posting.getBar_id();
-        String post_name = posting.getPost_name();
-        String post_msg = posting.getPost_msg();
-        System.out.println(bar_id + "," + post_name + "," + post_msg);
-        PostingModule.posting(bar_id, PostingModule.getUserID(UserName), post_name, post_msg);
+        String user_id = ReplyModule.getUserID(UserName);
+        ReplyModule.Reply(bar_id, post_id, reply_msg, user_id);
         
         ActionForward actionForward = new ActionForward();
         actionForward.setPath(request.getHeader("Referer"));

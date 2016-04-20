@@ -27,10 +27,11 @@ public class ReplyModule {
 		//获得回帖id
 		sql = "select * from reply where "
 				+ "bar_id = '" + bar_id + "' and post_id = '" + post_id + "' and reply_msg = '" + reply_msg + "' and user_id = '" + user_id + "'";
-                List<user> list = s.createSQLQuery(sql).addEntity(reply.class).list();
+                List<reply> list = s.createSQLQuery(sql).addEntity(reply.class).list();
 		
 		//修改最后回复
-		sql = "update post set last_reply = '" + list + "' where post_id = '" + post_id + "'";
+		sql = "update post set last_reply = '" + list.get(0).getReply_id()+ "' where post_id = '" + post_id + "'";
+                System.out.println(sql);
 		int back1 = s.createSQLQuery(sql).executeUpdate();
 		//修改最后回复时间
 		sql = "update post set last_date = now() where post_id = '" + post_id + "'";
@@ -43,7 +44,7 @@ public class ReplyModule {
 	public static String getUserID(String name){
                 Session s = HibernateUtil.currentSession();
                 HibernateUtil.beginTransaction();
-		String sql = "select user_id from user where user_name = '" + name + "'";
+		String sql = "select * from user where user_name = '" + name + "'";
 		List<user> list = s.createSQLQuery(sql).addEntity(user.class).list();
                 HibernateUtil.commitTransaction();//结束操作
                 HibernateUtil.closeSession();

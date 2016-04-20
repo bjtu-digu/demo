@@ -16,6 +16,8 @@
         <form-bean name="barTeacherForm" type="com.struts.actionForm.BarTeacherForm"/>
         <form-bean name="chatingForm" type="com.struts.actionForm.ChatingForm"/>
         <form-bean name="postingForm" type="com.struts.actionForm.PostingForm"/>
+        <form-bean name="postForm" type="com.struts.actionForm.PostForm"/>
+        <form-bean name="replyForm" type="com.struts.actionForm.ReplyForm"/>
     </form-beans>
     
     <global-exceptions>
@@ -65,6 +67,16 @@
         </action>
         <action path="/posting" type="com.struts.action.PostingAction"
                 name="postingForm" scope="request">
+        </action>
+        <action path="/post" type="com.struts.action.PostAction"
+                name="postForm" scope="session">
+            <forward name="self" path="/OLDPAGES/Post.jsp"/>
+        </action>
+        <action path="/reply" type="com.struts.action.ReplyAction"
+                name="replyForm" scope="request">
+        </action>
+        <action path="/logout" type="com.struts.action.LogoutAction"
+                scope="session">
         </action>
     </action-mappings>
     
