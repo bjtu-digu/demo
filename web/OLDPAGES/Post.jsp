@@ -57,7 +57,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="Search.jsp">私密圈系统</a>
+                    <a class="navbar-brand" href="Search.jsp">嘀咕</a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
@@ -74,9 +74,8 @@
                     <ul class="nav navbar-nav navbar-right">
                         <%                                            if (UserName.equals("") || UserName.length() == 0) {
                                 out.print("<li>"
-                                        + "	<form action = 'login' class='navbar-form'>"
-                                        + "		<button onClick='login()' href='Login.jsp' type='button' class='btn ' data-toggle='modal' data-target='#myModal'><a href='Login.jsp' onClick='login()'>登录</a></button>"
-                                        + "	</form>"
+                                        + "	<form action='login.do' class='navbar-form'>"
+                                        + "		<button type='button' class='btn '><a class='btn' href='Login.jsp' onClick='Login()'>登录</a></button>"
                                         + "</li>"
                                         + "<li><a href='Register.jsp' onClick='Register()'>注册</a></li>");
                             } else {
