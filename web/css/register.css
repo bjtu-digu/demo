@@ -1,0 +1,71 @@
+body {
+    background-color: rgb(38,38,38);
+    font-family: "微软雅黑","宋体",Arial;
+    font-size: 1.4em;
+    line-height: 26px;
+}
+
+h3 {
+    display: block;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+}
+
+.panel-group .panel {
+    margin-bottom: 0;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.panel {
+    background-color: #F2F2F2;
+    box-shadow: 0 1px 1px rgba(0,0,0,.05);
+}
+
+.form-group {
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.input-group-addon, .form-control {
+    background-color: transparent;
+    border-color: transparent;
+    -webkit-border-radius: 0;
+    box-shadow: 0 0 0 #ffffff;
+}
+
+.fg {
+    border-bottom: dotted 1px #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.panel-body {
+    padding: 15px;
+}
+
+nav .container{
+	padding-left: 120px;
+	padding-right: 120px;
+}
+
+.footer-log {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: rgb(157,157,157);
+}
+
+.footer-log a {
+    color: rgb(157,157,157);
+    padding-left: 10px;
+    margin-left: 10px;
+    border-left: 1.5px solid rgb(157,157,157);
+}
+
+.footer-log a:hover{
+    color: #fff;
+    text-decoration: none;
+}

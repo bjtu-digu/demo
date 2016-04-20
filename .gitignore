@@ -1,0 +1,4 @@
+# Folder config file 
+Desktop.ini 
+# ignore build
+/build/*

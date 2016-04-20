@@ -11,7 +11,11 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
+<<<<<<< HEAD
 import HibernateUtil.HibernateUtil;
+=======
+
+>>>>>>> develop
 /**
  *
  * @author zqhPC
@@ -19,6 +23,7 @@ import HibernateUtil.HibernateUtil;
 public class test {
      public static void main(String[] args) {
          try {
+<<<<<<< HEAD
        
              Session s=HibernateUtil.currentSession();
              HibernateUtil.beginTransaction();//开始操作
@@ -32,6 +37,18 @@ public class test {
              HibernateUtil.commitTransaction();//结束操作
              HibernateUtil.closeSession();
                  } catch (HibernateException e) {
+=======
+         SessionFactory sf= new Configuration().configure().buildSessionFactory();
+         Session s=sf.openSession();
+         Transaction tx=s.beginTransaction();
+         user u=new user();
+         u.setUser_name("uuu");
+         s.save(u);
+         tx.commit();
+             System.out.println("hhhhhhhhhhhhhhhhhhhhh");
+         s.close();
+         } catch (HibernateException e) {
+>>>>>>> develop
              e.printStackTrace();
          }
        

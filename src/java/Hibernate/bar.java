@@ -16,6 +16,9 @@ public class bar {
     int user_id;
     String topic;
     int exist;
+    String bar_name;
+    Date create_time;
+    int bar_head;
 
     public int getBar_id() {
         return bar_id;
@@ -85,8 +88,5 @@ public class bar {
     public void setBar_head(int bar_head) {
         this.bar_head = bar_head;
     }
-    String bar_name;
-    Date create_time;
-    int bar_head;
     
 }
