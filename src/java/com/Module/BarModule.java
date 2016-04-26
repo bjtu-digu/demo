@@ -28,7 +28,7 @@ public class BarModule {
     public static int checkBar(String name) {
         Session s = HibernateUtil.currentSession();
         HibernateUtil.beginTransaction();
-        String sql = "select exist from bar where bar_name = '" + name + "'";
+        String sql = "select * from bar where bar_name = '" + name + "'";
         List<bar> list = s.createSQLQuery(sql).addEntity(bar.class).list();
 
         HibernateUtil.commitTransaction();//结束操作

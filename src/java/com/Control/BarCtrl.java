@@ -98,7 +98,7 @@ public class BarCtrl extends Ctrl{
 	
 	//��ȡ��󷢲���id
 	public String getLastId(int index){
-		return String.valueOf(PostList.get(index).getLast_date());
+		return String.valueOf(PostList.get(index).getPost_id());
 	}
 	
 	//���ĳ������

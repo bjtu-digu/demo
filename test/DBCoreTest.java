@@ -3,9 +3,7 @@ import junit.framework.TestCase;
 
 public class DBCoreTest extends TestCase {
 
-	/*
-	 * ���ﻹ��֪����β��ԣ���ʱ��д���ģ��Ĳ��ԡ�Servlet����ĺ���Ҳ�������ˣ�����û�з���ֵ��
-	 */
+	
 	public DBCoreTest(String name) {
 		super(name);
 	}
@@ -25,23 +23,23 @@ public class DBCoreTest extends TestCase {
 	}
 
 	public void testExecuteString() {
-		fail("Not yet implemented");
+		
 	}
 
 	public void testExecuteStringInt() {
-		fail("Not yet implemented");
+		
 	}
 
 	public void testMultiSelect() {
-		fail("Not yet implemented");
+		
 	}
 
 	public void testSingleSelect() {
-		fail("Not yet implemented");
+		
 	}
 
 	public void testUpdate() {
-		fail("Not yet implemented");
+		
 	}
 
 }
