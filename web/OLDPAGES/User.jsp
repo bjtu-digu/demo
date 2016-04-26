@@ -79,7 +79,7 @@
 							out.print("<li class='dropdown'>"
 									+"	<a href='#' class='dropdown-toggle' data-toggle='dropdown'>" + UserName + "<span class='caret'></span></a>"
 									+"	<ul class='dropdown-menu' role='menu' aria-labelledby='dropdownMenu1'>"
-									+"		<li><a href='user?user_id=" + userCtrl.getUserId(UserName) + "'>用户中心</a></li>"
+									+"		<li><a href='user.do?user_id=" + userCtrl.getUserId(UserName) + "'>用户中心</a></li>"
 									+"		<li><a href='logout'>注销</a></li>"
 									+"		<li role='separator' class='divider'></li>"
 									+"	</ul>"
@@ -131,7 +131,7 @@
 		<div class="jumbotron" style="height: 200px">
 			<div class="col-md-2 col-sm-4 col-xs-4">
 				<a href="#" class="thumbnail">
-					<img src="images/006.jpg" alt="thumbnail">
+					<img src="img/head.png" alt="thumbnail">
 				</a>
 			</div>
 			<div class="col-md-10 col-sm-8 col-xs-8">
@@ -192,7 +192,7 @@
 										if(i >= userCtrl.getBarNum())
 											break;
 										out.print("<td>");
-										out.print("<a type='button' class='btn btn-info' href = bar?name=" + userCtrl.getBarName(i) + "&page=1>"+ userCtrl.getBarName(i) + "(" + userCtrl.getSignNum(userCtrl.getBarId(i)) + ")" + "</a>");
+										out.print("<a type='button' class='btn btn-info' href = search.do?name=" + userCtrl.getBarName(i) + "&page=1>"+ userCtrl.getBarName(i) + "(" + userCtrl.getSignNum(userCtrl.getBarId(i)) + ")" + "</a>");
 										out.print("</td>");
 									}
 									out.print("<tr>");
@@ -212,8 +212,8 @@
 									if(i>=userCtrl.getStarNum())
 											break;
 									out.print("<div class='col-md-1 col-sm-2 col-xs-2'>");
-									out.print("<a href='user?user_id=" + userCtrl.getStarId(i) + "' class='thumbnail'>");
-									out.print("<img src='images/006.jpg' alt=''...''>");
+									out.print("<a href='user.do?user_id=" + userCtrl.getStarId(i) + "' class='thumbnail'>");
+									out.print("<img src='img/head.png' alt=''...''>");
 									out.print("<p>" + userCtrl.getStarName(i) + "</p>");
 									out.print("</a>");
 									out.print("</div>");
@@ -230,8 +230,8 @@
 									if(i>=userCtrl.getFansNum())
 										break;
 									out.print("<div class='col-md-1 col-sm-2 col-xs-2'>");
-									out.print("<a href='user?user_id=" + userCtrl.getFansId(i) + "' class='thumbnail'>");
-									out.print("<img src='images/006.jpg' alt=''...''>");
+									out.print("<a href='user.do?user_id=" + userCtrl.getFansId(i) + "' class='thumbnail'>");
+									out.print("<img src='img/head.png' alt=''...''>");
 									out.print("<p>" + userCtrl.getFansName(i) + "</p>");
 									out.print("</a>");
 									out.print("</div>");
@@ -251,8 +251,8 @@
 								for(int i = 0;i<userCtrl.getPostNum();i++){
 									out.print("<tr>");
 										out.print("<td>");
-											out.print("<p>在&nbsp;&nbsp;<a href='bar?bar_id=" + userCtrl.getBarId(i) + "'>" 
-												+ userCtrl.getMyBarName(i) + "吧" + "</a>&nbsp;&nbsp;发布帖子&nbsp;&nbsp;<a href='user?user_id=" + userCtrl.getPostId(i) + "'>" + userCtrl.getPostName(i) 
+											out.print("<p>在&nbsp;&nbsp;<a href='bar.do?bar_id=" + userCtrl.getBarId(i) + "'>" 
+												+ userCtrl.getMyBarName(i) + "吧" + "</a>&nbsp;&nbsp;发布帖子&nbsp;&nbsp;<a href='post.do?post_id=" + userCtrl.getPostId(i) + "'>" + userCtrl.getPostName(i) 
 												+ "</a>&nbsp;&nbsp;回复（<span>" + userCtrl.getReplyNum(userCtrl.getPostId(i)) +  "</span>）</p>");
 										out.print("</td>");
 										out.print("<td>");
@@ -274,8 +274,8 @@
 								for(int i = 0;i<userCtrl.getReplyNum();i++){
 									out.print("<tr>");
 										out.print("<td>");
-										out.print("<p>在&nbsp;&nbsp;<a href='bar?bar_id=" + userCtrl.getReplyBarId(i) + "'>" 
-												+ userCtrl.getReplyBarName(i) + "吧" + "</a>&nbsp;&nbsp;发布帖子&nbsp;&nbsp;<a href='user?user_id=" + userCtrl.getReplyId(i) + "'>" + userCtrl.getReplyMsg(i) 
+										out.print("<p>在&nbsp;&nbsp;<a href='bar.do?bar_id=" + userCtrl.getReplyBarId(i) + "'>" 
+												+ userCtrl.getReplyBarName(i) + "吧" + "</a>&nbsp;&nbsp;发布帖子&nbsp;&nbsp;<a href='post.do?post_id=" + userCtrl.getReplyPostId(i) + "'>" + userCtrl.getReplyMsg(i) 
 												+ "</a>&nbsp;&nbsp;回复（<span>" + userCtrl.getReplyReplyNum(i) +  "</span>）</p>");
 										out.print("</td>");
 										out.print("<td>");
@@ -298,11 +298,11 @@
 									out.print("<tr>");
 										out.print("<td>");
 										if(userCtrl.getMsgType(i).equals("1")){
-											out.print("<p>&nbsp;&nbsp;<a href='user?user_id=" + userCtrl.getMsgSenderId(i) + "'>" 
+											out.print("<p>&nbsp;&nbsp;<a href='user.do?user_id=" + userCtrl.getMsgSenderId(i) + "'>" 
 													+ userCtrl.getUserName1(userCtrl.getMsgSenderId(i)) + "</a>&nbsp;&nbsp;对你说&nbsp;&nbsp;<a href='message?msg_id=" + userCtrl.getMsgId(i) + "&user_id=" + userCtrl.getMsgSenderId(i) + "'>" + userCtrl.getMsgMsg(i) 
 													+ "</p>");
 										}else if(userCtrl.getMsgType(i).equals("2")){
-											out.print("<p><a href=user?user_id=" + userCtrl.getMsgSenderId(i) + ">" 
+											out.print("<p><a href=user.do?user_id=" + userCtrl.getMsgSenderId(i) + ">" 
 												+ userCtrl.getUserName1(userCtrl.getMsgSenderId(i)) + "</a>申请成为<a href=bar?page=1&name=" 
 													+ userCtrl.getBarName1(userCtrl.getMsgMsg(i)) + ">" + userCtrl.getBarName1(userCtrl.getMsgMsg(i)) 
 															+ "</a>吧的指导老师&nbsp;&nbsp;&nbsp;<a href=bar_techer?yes=1&msg_id=" + userCtrl.getMsgId(i) + "&bar_id=" + userCtrl.getMsgMsg(i) + "&user_id="+userCtrl.getMsgSenderId(i)+">同意</a>&nbsp;&nbsp;<a href=bar_techer?msg_id=" + userCtrl.getMsgId(i) + ">拒绝</a></p>");

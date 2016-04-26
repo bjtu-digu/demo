@@ -82,7 +82,7 @@
                                 out.print("<li class='dropdown'>"
                                         + "	<a href='#' class='dropdown-toggle' data-toggle='dropdown'>" + UserName + "<span class='caret'></span></a>"
                                         + "	<ul class='dropdown-menu' role='menu' aria-labelledby='dropdownMenu1'>"
-                                        + "		<li><a href='user?user_id=" + postCtrl.getUserID1(UserName) + "'>用户中心</a></li>"
+                                        + "		<li><a href='user.do?user_id=" + postCtrl.getUserID1(UserName) + "'>用户中心</a></li>"
                                         + "		<li><a href='logout.do'>注销</a></li>"
                                         + "		<li role='separator' class='divider'></li>"
                                         + "	</ul>"
@@ -181,7 +181,7 @@
                     out.print("<div class='panel-body'>");
                     out.print("<div class='col-md-2 col-xs-2 col-sm-2'><!--楼主头像-->");
                     out.print("<p><strong>楼主</strong></p>");
-                    out.print("<a href=user?user_id=" + postCtrl.getFirstUserId() + " class='thumbnail'>");
+                    out.print("<a href=user.do?user_id=" + postCtrl.getFirstUserId() + " class='thumbnail'>");
                     out.print("<img src='img/head.png' alt='头像'>");
                     out.print("</a>");
                     //out.print("<a href=user?user_id=" + postCtrl.getFirstUserId() + "><p><!-- 楼主名 -->" + postCtrl.getFirstUserName() + "</p></a>");

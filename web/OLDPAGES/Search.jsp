@@ -70,7 +70,7 @@
                                                     +"	<a href='#' class='dropdown-toggle' data-toggle='dropdown'>" + UserName + "<span class='caret'></span></a>"
                                                     +"	<ul class='dropdown-menu' role='menu' aria-labelledby='dropdownMenu1'>"
                                                     +"		<li><a href='user?user_id=" + searchCtrl.getUserID(UserName) + "'>用户中心</a></li>"
-                                                    +"		<li><a href='logout'>注销</a></li>"
+                                                    +"		<li><a href='logout.do'>注销</a></li>"
                                                     +"		<li role='separator' class='divider'></li>"
                                                     +"	</ul>"
                                                     +"</li>");

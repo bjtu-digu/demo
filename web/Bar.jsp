@@ -135,7 +135,7 @@
                                                 + UserName
                                                 + "<span class='caret'></span></a>"
                                                 + "<ul class='dropdown-menu' role='menu' aria-labelledby='dropdownMenu1'>"
-                                                + "<li><a href='user?user_id=" + barCtrl.getUserID1(UserName) + "'>用户中心</a></li>"
+                                                + "<li><a href='user.do?user_id=" + barCtrl.getUserID1(UserName) + "'>用户中心</a></li>"
                                                 + "<li><a href='logout.do'>注销</a></li>"
                                                 + "<li role='separator' class='divider'></li>"
                                                 + "</ul>"
@@ -268,7 +268,7 @@
                             out.print("<article class='mab-panel'>"
                                     + "<div class='mab-p-info'>"
                                     + "<a href='user?user_id=" + barCtrl.getPosterId(i) + "'>"
-                                    + "<img class='mab-p-i-avatar' src='#'>"
+                                    + "<img class='mab-p-i-avatar' src='img/head.png'>"
                                     + "<span class='mab-p-i-name'>" + barCtrl.getUserName((barCtrl.getPosterId(i))) + "</span>"
                                     + "</a>"
                                     + "<div class='mab-p-i-time'>6小时前</div>"

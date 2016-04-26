@@ -4,11 +4,18 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/G:/大三/digu/web/OLDPAGES/Post.jsp</file>
-            <file>file:/G:/大三/digu/src/java/com/struts/action/StarBarAction.java</file>
-            <file>file:/G:/大三/digu/web/Login.jsp</file>
+            <file>file:/G:/大三/digu/src/java/com/struts/actionForm/BarForm.java</file>
+            <file>file:/G:/大三/digu/src/java/com/struts/action/UserAction.java</file>
+            <file>file:/G:/大三/digu/web/OLDPAGES/User.jsp</file>
+            <file>file:/G:/大三/digu/src/java/com/struts/action/SearchAction.java</file>
+            <file>file:/G:/大三/digu/src/java/com/Control/UserCtrl.java</file>
+            <file>file:/G:/大三/digu/src/java/com/struts/action/BarAction.java</file>
+            <file>file:/G:/大三/digu/src/java/com/Module/UserModule.java</file>
             <file>file:/G:/大三/digu/web/WEB-INF/struts-config.xml</file>
-            <file>file:/G:/大三/digu/src/java/com/struts/action/LogoutAction.java</file>
-            <file>file:/G:/大三/digu/web/OLDPAGES/Search.jsp</file>
+            <file>file:/G:/大三/digu/src/java/com/struts/actionForm/UserForm.java</file>
+            <file>file:/G:/大三/digu/src/java/com/struts/action/RegisterAction.java</file>
+            <file>file:/G:/大三/digu/src/java/com/struts/action/PostAction.java</file>
+            <file>file:/G:/大三/digu/web/Bar.jsp</file>
         </group>
     </open-files>
 </project-private>

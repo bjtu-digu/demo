@@ -12,5 +12,6 @@
   <property column="reader_id" name="reader_id"/>
   <property column="read" name="read"/>
    <property column="exist" name="exist"/>
+   <property column="msg_date" name="msg_date"/>
   </class>
 </hibernate-mapping>
