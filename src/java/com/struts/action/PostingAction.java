@@ -5,7 +5,8 @@
  */
 package com.struts.action;
 
-import com.Module.PostingModule;
+import com.Control.CtrlFacory;
+import com.IControl.IPostingCtrl;
 import com.struts.actionForm.PostingForm;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -43,7 +44,10 @@ public class PostingAction extends Action {
         String post_name = posting.getPost_name();
         String post_msg = posting.getPost_msg();
         System.out.println(bar_id + "," + post_name + "," + post_msg);
-        PostingModule.posting(bar_id, PostingModule.getUserID(UserName), post_name, post_msg);
+        
+        //工厂
+        IPostingCtrl pct = CtrlFacory.getPostingCtrl();
+        pct.posting(bar_id, bar_id, post_name, post_msg);
         
         ActionForward actionForward = new ActionForward();
         actionForward.setPath(request.getHeader("Referer"));

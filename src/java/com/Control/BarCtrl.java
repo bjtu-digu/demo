@@ -7,7 +7,7 @@ import com.Module.BarModule;
 import com.Module.SearchModule;
 import java.util.List;
 
-public class BarCtrl extends Ctrl{
+public class BarCtrl extends Ctrl implements com.IControl.IBarCtrl{
 	String page;
 	String name;
 	List<bar> BarInfo;	
@@ -17,7 +17,9 @@ public class BarCtrl extends Ctrl{
 	public String getUserID1(String name){
 		return SearchModule.getUserID(name);
 	}
-	
+	public BarCtrl(){
+            
+        }
 	public BarCtrl(String name,String page){
 		this.page = page;
 		this.name = name;

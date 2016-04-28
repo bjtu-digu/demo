@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import com.Module.PostModule;
 import java.util.List;
 
-public class PostCtrl extends Ctrl {
+public class PostCtrl extends Ctrl implements com.IControl.IPostCtrl{
 
     String post_id;
     String page;

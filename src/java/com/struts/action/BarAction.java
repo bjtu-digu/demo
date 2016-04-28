@@ -5,7 +5,8 @@
  */
 package com.struts.action;
 
-import com.Module.BarModule;
+import com.Control.CtrlFacory;
+import com.IControl.IBarCtrl;
 import com.struts.actionForm.BarForm;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -24,8 +25,9 @@ public class BarAction extends Action{
     public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
         BarForm bar = (BarForm)form;
         String id = bar.getBar_id();
-        String name = BarModule.getBarName1(id);
-        
+        //String name = BarModule.getBarName1(id);
+        IBarCtrl ibc = CtrlFacory.getBarCtrl();
+        String name = ibc.getBarName1(id);
         request.setAttribute("name", name);
         request.setAttribute("page", "1");
         return mapping.findForward("bar");
