@@ -5,6 +5,8 @@
  */
 package com.struts.action;
 
+import com.Control.CtrlFacory;
+import com.IControl.IReplyCtrl;
 import com.Module.ReplyModule;
 import com.struts.actionForm.ReplyForm;
 import javax.servlet.http.Cookie;
@@ -39,9 +41,11 @@ public class ReplyAction extends Action {
                 }
             }
         }
-        String user_id = ReplyModule.getUserID(UserName);
-        ReplyModule.Reply(bar_id, post_id, reply_msg, user_id);
-        
+         IReplyCtrl ibc = CtrlFacory.getReplyCtrl();
+        String user_id=ibc.getUserID(UserName);
+        //String user_id = ReplyModule.getUserID(UserName);
+       // ReplyModule.Reply(bar_id, post_id, reply_msg, user_id);
+        ibc.Reply(bar_id, post_id, reply_msg, user_id);
         ActionForward actionForward = new ActionForward();
         actionForward.setPath(request.getHeader("Referer"));
         actionForward.setRedirect(true);

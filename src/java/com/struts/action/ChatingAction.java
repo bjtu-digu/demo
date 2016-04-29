@@ -5,6 +5,9 @@
  */
 package com.struts.action;
 
+import com.Control.CtrlFacory;
+import com.Control.MsgCtrl;
+import com.IControl.IMsgCtrl;
 import com.Module.MsgModule;
 import com.struts.actionForm.ChatingForm;
 import javax.servlet.http.Cookie;
@@ -37,9 +40,12 @@ public class ChatingAction extends Action {
         }
 //        String bar_id = request.getParameter("bar_id");
 //        String msg = request.getParameter("msg");
+        
+         IMsgCtrl ibc = CtrlFacory.getMsgCtrl();
+        
         String bar_id = chating.getBar_id();
         String msg = chating.getMsg();
-        String sql = "insert into chat(user_id,bar_id,msg) values('" + MsgModule.getUserID(UserName) + "','" + bar_id + "','" + msg + "')";
+        String sql = "insert into chat(user_id,bar_id,msg) values('" + ibc.getUserID(UserName) + "','" + bar_id + "','" + msg + "')";
         //DBCore.Execute(sql);
         //response.sendRedirect(request.getHeader("Referer"));
         ActionForward actionForward = new ActionForward(request.getHeader("Referer"));

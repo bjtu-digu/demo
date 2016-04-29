@@ -31,10 +31,28 @@ public class CtrlFacory {
         IBarCtrl ibc = new BarCtrl();
         return ibc;
     }
-    /*
-    public static IBarCtrl getBarCtrl(String str, String str2)
-    {
-        return null;
+      public static IBarTeacherCtrl getBarTeacherCtrl(){
+        IBarTeacherCtrl btc = new BarTeacherCtrl();
+        return btc;
     }
-    */
+       public static IMsgCtrl getMsgCtrl(){
+        IMsgCtrl btc = new MsgCtrl();
+        return btc;
+    }
+     public static ILoginCtrl getLoginCtrl(){
+        ILoginCtrl btc = new LoginCtrl();
+        return btc;
+    }
+      public static IReplyCtrl getReplyCtrl(){
+        IReplyCtrl btc = new ReplyCtrl();
+        return btc;
+    }
+        public static ISignCtrl getSignCtrl(){
+        ISignCtrl btc = new SignCtrl();
+        return btc;
+    }
+       public static IUnStarBarCtrl getUnStarBarCtrl(){
+        IUnStarBarCtrl btc = new UnStarBarCtrl();
+        return btc;
+    }
 }

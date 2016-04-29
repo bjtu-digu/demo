@@ -5,6 +5,8 @@
  */
 package com.struts.action;
 
+import com.Control.CtrlFacory;
+import com.IControl.ILoginCtrl;
 import com.Module.LoginModule;
 import com.struts.actionForm.LoginForm;
 import java.io.PrintWriter;
@@ -31,8 +33,9 @@ public class LoginAction extends Action {
         LoginForm form1 = (LoginForm) form;
         String name = form1.getName();
         String pass = form1.getPass();
-        int back = LoginModule.login(name, pass);
-        
+         ILoginCtrl ibc = CtrlFacory.getLoginCtrl();
+       // int back = LoginModule.login(name, pass);
+        int back=ibc.login(name, pass);
         String alert = "";
 
         if (back == 0) {

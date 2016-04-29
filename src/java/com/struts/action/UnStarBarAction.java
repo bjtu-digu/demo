@@ -5,6 +5,8 @@
  */
 package com.struts.action;
 
+import com.Control.CtrlFacory;
+import com.IControl.IUnStarBarCtrl;
 import com.Module.UnStarBarModule;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -33,7 +35,11 @@ public class UnStarBarAction extends Action {
             }
         }
         String bar_id = request.getParameter("bar_id");
-        UnStarBarModule.UnStarBar(bar_id, UnStarBarModule.getUserID(UserName));
+        
+        IUnStarBarCtrl ibc = CtrlFacory.getUnStarBarCtrl();
+        
+        //UnStarBarModule.UnStarBar(bar_id, UnStarBarModule.getUserID(UserName));
+        ibc.UnStarBar(bar_id,ibc.getUserID(UserName));
         ActionForward actionForward = new ActionForward(request.getHeader("Referer"));
         actionForward.setRedirect(true);
         return actionForward; 

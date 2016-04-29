@@ -5,6 +5,9 @@
  */
 package com.struts.action;
 
+import com.Control.CtrlFacory;
+import com.IControl.IBarCtrl;
+import com.IControl.IBarTeacherCtrl;
 import com.Module.BarTeacherModule;
 import com.struts.actionForm.BarTeacherForm;
 import javax.servlet.http.Cookie;
@@ -37,6 +40,10 @@ public class BarTeacherAction extends Action {
         }
 //        String bar_id = request.getParameter("bar_id");
 //        String ask = request.getParameter("ask");
+        
+         IBarTeacherCtrl ibc = CtrlFacory.getBarTeacherCtrl();
+        
+        
         String bar_id = barTeacher.getBar_id();
         String ask = barTeacher.getAsk();
         //如果不是请求，则设置
@@ -46,18 +53,23 @@ public class BarTeacherAction extends Action {
             if (yes != null) {
                 //设置老师
                 String user_id = request.getParameter("user_id");
-                BarTeacherModule.SetTeacher(bar_id, user_id);
+                //BarTeacherModule.SetTeacher(bar_id, user_id);
+                ibc.SetTeacher(bar_id, user_id);
+                 
                 String msg_id = request.getParameter("msg_id");
-                BarTeacherModule.DeleteAskTeacher(msg_id);
+               // BarTeacherModule.DeleteAskTeacher(msg_id);
+                ibc.DeleteAskTeacher(msg_id);
                 response.sendRedirect(request.getHeader("Referer"));
             } else {
                 String msg_id = request.getParameter("msg_id");
-                BarTeacherModule.DeleteAskTeacher(msg_id);
+                //BarTeacherModule.DeleteAskTeacher(msg_id);
+                ibc.DeleteAskTeacher(msg_id);
             }
         } //如果不是请求，则给吧主发送信号
         else {
             //给吧主加入消息
-            BarTeacherModule.AskTeacher(bar_id, BarTeacherModule.getUserID(UserName));
+           // BarTeacherModule.AskTeacher(bar_id, BarTeacherModule.getUserID(UserName));
+            ibc.AskTeacher(bar_id, ibc.getUserID(UserName));
         }
         
         ActionForward actionForward = new ActionForward(request.getHeader("Referer"));

@@ -5,6 +5,8 @@
  */
 package com.struts.action;
 
+import com.Control.CtrlFacory;
+import com.IControl.ISignCtrl;
 import com.Module.SignModule;
 import com.struts.actionForm.SignForm;
 import javax.servlet.http.Cookie;
@@ -36,7 +38,9 @@ public class SignAction extends Action {
             }
         }
         String bar_id = sign.getBar_id();
-        SignModule.Sign(bar_id, SignModule.getUserID(UserName));
+        ISignCtrl ibc = CtrlFacory.getSignCtrl();
+        ibc.Sign(bar_id, ibc.getUserID(UserName));
+        //SignModule.Sign(bar_id, SignModule.getUserID(UserName));
         //response.sendRedirect(request.getHeader("Referer"));
         ActionForward actionForward = new ActionForward(request.getHeader("Referer"));
         actionForward.setRedirect(true);
