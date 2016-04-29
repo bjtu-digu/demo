@@ -14,7 +14,8 @@ import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
-
+import com.IControl.IRegisterCtrl;
+import com.Control.CtrlFacory;
 /**
  *
  * @author zxq
@@ -27,7 +28,7 @@ public class RegisterAction extends Action {
         String name = register.getName();
         
         String alert = "";
-
+        IRegisterCtrl irc = CtrlFacory.getrRegisterCtrl();
         if (RegisterModule.checkRegister(name) != 0) {
             //out.println("用户已存在");
             alert = "<script>alert('用户已存在')</script>";

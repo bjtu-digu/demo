@@ -16,7 +16,11 @@ public class PostCtrl extends Ctrl implements com.IControl.IPostCtrl{
     List<bar> BarInfo;//贴吧信息表
     List<post> FirstFloor;//一楼信息
     List<reply> FloorInfo;//回帖表
-
+    
+    public PostCtrl()
+    {
+        
+    }
     public PostCtrl(String post_id, String page, String poster, String teacher) {
         this.page = page;
         this.post_id = post_id;

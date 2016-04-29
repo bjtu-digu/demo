@@ -15,6 +15,27 @@ import com.Module.PostingModule;
 
 public class CtrlFacory {
     
+    public static IStarBarCtrl getStarBarCtrl()
+    {
+        IStarBarCtrl isbc = new StarBarCtrl();
+        return isbc;
+    }
+    public static ISearchCtrl getSearchCtrl()
+    {
+        ISearchCtrl isc = new SearchCtrl();
+        return isc;
+    }
+    public static ICreateCtrl getCreateCtrl()
+    {
+        ICreateCtrl icc = new CreatCtrl();
+        return icc;
+    }
+    
+    public static IRegisterCtrl getrRegisterCtrl()
+    {
+        IRegisterCtrl irc = new RegisterCtrl();
+        return irc;
+    }
     //获取postCtrl
     public static IPostCtrl getPostCtrl(String post_id, String page, String poster, String teacher){
         IPostCtrl pc = new PostCtrl(post_id,page,poster,teacher);

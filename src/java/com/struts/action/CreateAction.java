@@ -15,7 +15,8 @@ import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
-
+import com.Control.CtrlFacory;
+import com.IControl.ICreateCtrl;
 /**
  *
  * @author zxq
@@ -43,7 +44,8 @@ public class CreateAction extends Action {
             return mapping.findForward("login");
         }
 
-        String id = PostModule.getUserID(UserName);
+        ICreateCtrl icc = CtrlFacory.getCreateCtrl();
+        String id = icc.getUserID(UserName);
         //String id = request.getParameter("id") ;
         //String name = request.getParameter("name");
         //String topic = request.getParameter("type");
@@ -52,7 +54,7 @@ public class CreateAction extends Action {
         String topic = create.getType();
 
         //创建贴吧
-        CreateBarModule.createBar(id, topic, name);
+        icc.createBar(id, topic, name);
         //out.println("创建成功");
         //response.sendRedirect("bar?page=1&name=" + name);
         ActionForward newForward = new ActionForward("search.do"+ "?name=" + name + "&page=1");

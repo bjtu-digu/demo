@@ -1,12 +1,18 @@
 package com.Control;
 
+import com.IControl.ISearchCtrl;
 import com.Module.SearchModule;
 
 import javax.servlet.http.HttpServletRequest;
 
-public class SearchCtrl extends Ctrl{
-	//获取用户ID
+public class SearchCtrl extends Ctrl implements ISearchCtrl{
+	//锟斤拷取锟矫伙拷ID
 	public String getUserID(String name){
 		return SearchModule.getUserID(name);
 	}
+
+    @Override
+    public int checkBar(String name) {
+        return SearchModule.checkBar(name);
+    }
 }

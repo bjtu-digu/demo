@@ -5,7 +5,9 @@
  */
 package com.struts.action;
 
-import com.Module.StarBarModule;
+//import com.Module.StarBarModule;
+import com.Control.CtrlFacory;
+import com.IControl.IStarBarCtrl;
 import com.struts.actionForm.StarBarForm;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -36,7 +38,8 @@ public class StarBarAction extends Action {
             }
         }
         String bar_id = starBar.getBar_id();
-        StarBarModule.StarBar(StarBarModule.getUserID(UserName), bar_id);
+        IStarBarCtrl isbc =  CtrlFacory.getStarBarCtrl();
+        isbc.StarBar(UserName, bar_id);
         ActionForward actionForward = new ActionForward(request.getHeader("Referer"));
         actionForward.setRedirect(true);
         return actionForward; 
