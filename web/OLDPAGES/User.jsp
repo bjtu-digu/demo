@@ -52,7 +52,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<<a class="navbar-brand" href="Search.jsp">一纸贴吧系统</a>
+				<<a class="navbar-brand" href="Search.jsp">嘀咕</a>
 			</div>
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
@@ -63,7 +63,7 @@
 					<div class="form-group">
 						<input type="text" name = 'name'; class="form-control" placeholder="Search"></input>
 					</div>
-					<button type="submit" class="btn btn-primary">进入贴吧</button>
+					<button type="submit" class="btn btn-primary">进入私密圈</button>
 				</form>
 
 				<ul class="nav navbar-nav navbar-right">
@@ -159,7 +159,7 @@
 										out.print("<button class='btn btn-danger' type='submit'><span class='glyphicon glyphicon-plus'></span>取消关注</button>");
 									out.print("</from>");
 								}
-								out.print("<a href='message?user_id=" + user_id + "' class='btn btn-info' type='button'><span class='glyphicon glyphicon-pencil'></span>私信</a>");
+								out.print("<a href='msg.do?user_id=" + user_id + "' class='btn btn-info' type='button'><span class='glyphicon glyphicon-pencil'></span>私信</a>");
 							}
 						}
 					%>
@@ -169,7 +169,7 @@
 		<!--吧内导航-->
 		<ul class="nav nav-tabs">
 			<li role="presentation" class="active"><a href="#tab1"  data-toggle="tab">我的关注</a></li>
-			<li role="presentation"><a href="#tab2"  data-toggle="tab">我的帖子</a></li>
+			<li role="presentation"><a href="#tab2"  data-toggle="tab">我的嘀咕</a></li>
 			<li role="presentation"><a href="#tab3"  data-toggle="tab">我的回复</a></li>
 			<%
 				if(UserName!=null)
@@ -299,7 +299,7 @@
 										out.print("<td>");
 										if(userCtrl.getMsgType(i).equals("1")){
 											out.print("<p>&nbsp;&nbsp;<a href='user.do?user_id=" + userCtrl.getMsgSenderId(i) + "'>" 
-													+ userCtrl.getUserName1(userCtrl.getMsgSenderId(i)) + "</a>&nbsp;&nbsp;对你说&nbsp;&nbsp;<a href='message?msg_id=" + userCtrl.getMsgId(i) + "&user_id=" + userCtrl.getMsgSenderId(i) + "'>" + userCtrl.getMsgMsg(i) 
+													+ userCtrl.getUserName1(userCtrl.getMsgSenderId(i)) + "</a>&nbsp;&nbsp;对你说&nbsp;&nbsp;<a href='msg.do?msg_id=" + userCtrl.getMsgId(i) + "&user_id=" + userCtrl.getMsgSenderId(i) + "'>" + userCtrl.getMsgMsg(i) 
 													+ "</p>");
 										}else if(userCtrl.getMsgType(i).equals("2")){
 											out.print("<p><a href=user.do?user_id=" + userCtrl.getMsgSenderId(i) + ">" 

@@ -54,7 +54,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#">一纸贴吧系统</a>
+				<a class="navbar-brand" href="#">嘀咕</a>
 			</div>
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
@@ -65,8 +65,8 @@
 					<div class="form-group">
 						<input type="text" class="form-control" placeholder="Search"></input>
 					</div>
-					<button type="submit" class="btn">搜索贴吧</button>
-					<button type="submit" class="btn btn-primary">进入贴吧</button>
+					<button type="submit" class="btn">搜索私密圈</button>
+					<button type="submit" class="btn btn-primary">进入私密圈</button>
 				</form>
 
 				<ul class="nav navbar-nav navbar-right">
@@ -105,7 +105,7 @@
 					out.print("<label>" + msgCtrl.getUserName() + "：" + msgCtrl.getMsg(msg_id) + "</label> ");
 				}
 					out.print("<br><label>To " + msgCtrl.getUserName() + ":</label> ");
-				out.print("<form role='message' action = 'message' method = 'get'>");
+				out.print("<form role='message' action = 'msg.do' method = 'post'>");
 						out.print("<div style='margin-top: 10px;''>");
 							out.print("<input type='text' name = 'user_id' style='display:none' value ="+user_id+" >");
 							if(msg_id!=null){

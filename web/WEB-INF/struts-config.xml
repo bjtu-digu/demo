@@ -20,6 +20,7 @@
         <form-bean name="replyForm" type="com.struts.actionForm.ReplyForm"/>
         <form-bean name="userForm" type="com.struts.actionForm.UserForm"/>
         <form-bean name="barForm" type="com.struts.actionForm.BarForm"/>
+        <form-bean name="msgForm" type="com.struts.actionForm.MsgForm"/>
     </form-beans>
     
     <global-exceptions>
@@ -87,6 +88,10 @@
         <action path="/bar" type="com.struts.action.BarAction"
                 name="barForm" scope="session">
             <forward name="bar" path="/Bar.jsp"/>
+        </action>
+        <action path="/msg" type="com.struts.action.MsgAction"
+                name="msgForm" scope="request">
+            <forward name="msg" path="/OLDPAGES/Msg.jsp"/>
         </action>
     </action-mappings>
     
