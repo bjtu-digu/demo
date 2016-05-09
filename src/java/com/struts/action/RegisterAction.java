@@ -5,6 +5,7 @@
  */
 package com.struts.action;
 
+import com.MD5.MD5Util;
 import com.Module.RegisterModule;
 import com.struts.actionForm.RegisterForm;
 import java.io.PrintWriter;
@@ -25,6 +26,11 @@ public class RegisterAction extends Action {
     public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
         RegisterForm register = (RegisterForm) form;
         String name = register.getName();
+        String mail = register.getMail();
+        String pass = register.getPass();
+        String pic = request.getParameter("pic");
+        //MD5加密
+        pass = MD5Util.encode(pass);
         
         String alert = "";
 
@@ -34,10 +40,13 @@ public class RegisterAction extends Action {
             request.setAttribute("alert", alert);
             return mapping.findForward("self");
         }
+        
+        if(!RegisterModule.checkEmail(mail)){
+            alert = "<script>alert('请填写真实有效的邮箱')</script>";
+            request.setAttribute("alert", alert);
+            return mapping.findForward("self");
+        }
 
-        String mail = register.getMail();
-        String pass = register.getPass();
-        String pic = request.getParameter("pic");
         if (RegisterModule.register(name, pass, mail, pic) == 0) {
             alert = "<script>alert('未知错误')</script>";
             request.setAttribute("alert", alert);
