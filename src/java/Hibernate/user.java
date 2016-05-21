@@ -17,6 +17,7 @@ public class user {
     String user_name;
     Integer exist;
     String password;
+    Integer available;
 
     public user() {
     }
@@ -109,6 +110,14 @@ public class user {
 
     public void setMail(String mail) {
         this.mail = mail;
+    }
+
+    public void setAvailable(Integer available) {
+        this.available = available;
+    }
+
+    public Integer getAvailable() {
+        return available;
     }
 
    

@@ -179,28 +179,29 @@
 						}
 			%>
 		</ul>
-		<div class="tab-content">
-			<div id="tab1" class="tab-pane fade in active">
-				<div class="panel panel-default">
-					<div class="panel-body">
-						<p><strong>关注的吧</strong></p>
-						<table class="table">
-							<%
-								for(int i = 0; i < userCtrl.getBarNum();i++){
-									out.print("<tr>");
-									for(int j = 0; j<4 ;j++,i++){
-										if(i >= userCtrl.getBarNum())
-											break;
-										out.print("<td>");
-										out.print("<a type='button' class='btn btn-info' href = search.do?name=" + userCtrl.getBarName(i) + "&page=1>"+ userCtrl.getBarName(i) + "(" + userCtrl.getSignNum(userCtrl.getBarId(i)) + ")" + "</a>");
-										out.print("</td>");
-									}
-									out.print("<tr>");
-								}
-							%>
-						</table>
-					</div>
-				</div>
+                        <div class="tab-content">
+                            <div id="tab1" class="tab-pane fade in active">
+                                <div class="panel panel-default">
+                                    <div class="panel-body">
+                                        <p><strong>关注的吧</strong></p>
+                                        <table class="table">
+                                            <%
+                                                for (int i = 0; i < userCtrl.getBarNum(); i++) {
+                                                    out.print("<tr>");
+                                                    for (int j = 0; j < 4; j++, i++) {
+                                                        if (i >= userCtrl.getBarNum()) {
+                                                            break;
+                                                        }
+                                                        out.print("<td>");
+                                                        out.print("<a type='button' class='btn btn-info' href = search.do?name=" + userCtrl.getBarName(i) + "&page=1>" + userCtrl.getBarName(i) + "(" + userCtrl.getSignNum(userCtrl.getBarId(i)) + ")" + "</a>");
+                                                        out.print("</td>");
+                                                    }
+                                                    out.print("<tr>");
+                                                }
+                                            %>
+                                        </table>
+                                    </div>
+                                </div>
 
 				<div class="panel panel-default">
 					<div class="panel-body">

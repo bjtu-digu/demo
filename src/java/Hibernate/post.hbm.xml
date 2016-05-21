@@ -13,5 +13,6 @@
   <property column="post_date" name="post_date"/>
   <property column="last_reply" name="last_reply"/>
   <property column="exist" name="exist"/>
+  <property column="available" name="available"/>
 </class>
 </hibernate-mapping>

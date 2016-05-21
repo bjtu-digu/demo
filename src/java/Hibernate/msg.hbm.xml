@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-   <class name="Hibernate.msg" table="msg">
-  <id column="msg_id" name="msg_id">
-    <generator class="increment"/>
-  </id>
-  <property column="msg" name="msg"/>
-  <property column="add_msg" name="add_msg"/>
-  <property column="type" name="type"/>
-  <property column="sender_id" name="sender_id"/>
-  <property column="reader_id" name="reader_id"/>
-  <property column="read" name="read"/>
-   <property column="exist" name="exist"/>
-   <property column="msg_date" name="msg_date"/>
-  </class>
+    <class name="Hibernate.msg" table="msg">
+        <id column="msg_id" name="msg_id">
+            <generator class="increment"/>
+        </id>
+        <property column="msg" name="msg"/>
+        <property column="add_msg" name="add_msg"/>
+        <property column="type" name="type"/>
+        <property column="sender_id" name="sender_id"/>
+        <property column="reader_id" name="reader_id"/>
+        <property column="read" name="read"/>
+        <property column="exist" name="exist"/>
+        <property column="msg_date" name="msg_date"/>
+    </class>
 </hibernate-mapping>
