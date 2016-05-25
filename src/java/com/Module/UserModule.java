@@ -15,7 +15,6 @@ import Hibernate.user;
 import HibernateUtil.HibernateUtil;
 import java.util.List;
 import org.hibernate.Session;
-import org.hibernate.type.StandardBasicTypes;
 
 /**
  *

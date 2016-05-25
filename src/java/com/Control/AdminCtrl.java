@@ -10,6 +10,8 @@ import Hibernate.post;
 import Hibernate.reply;
 import Hibernate.user;
 import com.Module.AdminModule;
+import com.admin.factory.BarCreator;
+import com.admin.factory.Creator;
 import java.util.List;
 
 /**
@@ -21,10 +23,11 @@ public class AdminCtrl {
     List<bar> bars;
     List<post> posts;
     List<reply> replys;
+    Creator c = new BarCreator();
     
     public AdminCtrl(){
         users = AdminModule.getUsers();
-        bars = AdminModule.getBars();
+        bars = c.getLists().get();
         posts = AdminModule.getPosts();
         replys = AdminModule.getReplys();
     }
