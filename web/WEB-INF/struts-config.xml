@@ -70,6 +70,9 @@
         <action path="/chating" type="com.struts.action.ChatingAction"
                 name="chatingForm" scope="request">
         </action>
+        <action path="/chat" type="com.struts.action.ChatAction"
+                name="chatingForm" scope="request">
+        </action>
         <action path="/posting" type="com.struts.action.PostingAction"
                 name="postingForm" scope="request">
         </action>
