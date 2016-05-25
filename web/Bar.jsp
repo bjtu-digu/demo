@@ -48,7 +48,7 @@
 
             function getInfo() {
                 <%
-                    out.print("url='chat.do?bar_id=" + barCtrl.getBarId() + "'");
+                    out.print("url='http://localhost:9000/chat?bar_id=" + barCtrl.getBarId() + "'");
                 %>
                 var rand = Math.random();
                 url += "&i=" + rand;
@@ -63,7 +63,8 @@
                 oAjax.onreadystatechange = function () {  //OnReadyStateChange事件
                     if (oAjax.readyState == 4) {  //4为完成
                         if (oAjax.status == 200) {    //200为成功
-                            document.getElementById('change').innerHTML = oAjax.responseText;
+                            var parsedJson = jQuery.parseJSON(oAjax.responseText);
+                            document.getElementById('change').innerHTML = parsedJson.msg;
                         } else {
                             if (fnFaild) {
                                 fnFaild();

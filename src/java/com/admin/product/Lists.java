@@ -13,4 +13,5 @@ import java.util.List;
  */
 public interface Lists {
     public List get();
+    public boolean changeStatus(String status, String id);
 }
