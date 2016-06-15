@@ -191,8 +191,8 @@ public class UserModule {
         Session s = HibernateUtil.currentSession();
         HibernateUtil.beginTransaction();
 
-        String sql = "select * from msg where reader_id = '" + user_id + "' order by msg_id DESC";
-        List<msg> list = s.createSQLQuery(sql).addEntity(msg.class).list();
+        String sql = "select * from msg where reader_id = ? or sender_id = ? order by msg_id DESC";
+        List<msg> list = s.createSQLQuery(sql).addEntity(msg.class).setString(0, user_id).setString(1, user_id).list();
 //        get.add("msg_id");
 //        get.add("int");
 //        get.add("msg");

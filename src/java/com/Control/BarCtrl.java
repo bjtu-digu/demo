@@ -29,6 +29,7 @@ public class BarCtrl extends Ctrl{
 		PostList = BarModule.getPostList(String.valueOf(BarInfo.get(0).getBar_id()), 
 				((pageNum-1)*10+1) + "", ((pageNum-1)*10+10) + "");
 	}
+	//
 	public boolean CheckBarName(){
 		return BarModule.checkBar(name) != 1;
 	}
@@ -171,13 +172,3 @@ public class BarCtrl extends Ctrl{
 		return BarModule.getReplyer(reply_id);
 	}
 }
-
-
-
-
-
-
-
-
-
-

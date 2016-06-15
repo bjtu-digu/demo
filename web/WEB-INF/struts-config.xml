@@ -37,12 +37,12 @@
         <action path="/Welcome" forward="/welcomeStruts.jsp"/>
         <action path="/login" type="com.struts.action.LoginAction"
                 name="loginForm" scope="request">
-            <forward name="search" path="/OLDPAGES/Search.jsp"/>
+            <forward name="search" path="/Search.jsp"/>
             <forward name="self" path="/Login.jsp"/>
         </action>
         <action path="/register" type="com.struts.action.RegisterAction"
                 name="registerForm" scope="request">
-            <forward name="search" path="/OLDPAGES/Search.jsp"/>
+            <forward name="search" path="/Search.jsp"/>
             <forward name="self" path="/Register.jsp"/>
         </action>
         <action path="/search" type="com.struts.action.SearchAction"
@@ -78,7 +78,7 @@
         </action>
         <action path="/post" type="com.struts.action.PostAction"
                 name="postForm" scope="session">
-            <forward name="self" path="/OLDPAGES/Post.jsp"/>
+            <forward name="self" path="/Post.jsp"/>
         </action>
         <action path="/reply" type="com.struts.action.ReplyAction"
                 name="replyForm" scope="request">
@@ -88,7 +88,7 @@
         </action>
         <action path="/user" type="com.struts.action.UserAction"
                 name="userForm" scope="session">
-            <forward name="user" path="/OLDPAGES/User.jsp"/>
+            <forward name="user" path="/User.jsp"/>
         </action>
         <action path="/bar" type="com.struts.action.BarAction"
                 name="barForm" scope="session">
@@ -96,7 +96,7 @@
         </action>
         <action path="/msg" type="com.struts.action.MsgAction"
                 name="msgForm" scope="request">
-            <forward name="msg" path="/OLDPAGES/Msg.jsp"/>
+            <forward name="msg" path="/Msg.jsp"/>
         </action>
         <action path="/adminLogin" type="com.struts.action.AdminLoginAction"
                 name="loginForm" scope="request">
@@ -110,7 +110,7 @@
         </action>
         <action path="/specialLogin" type="com.struts.action.SpecialLoginAction"
                 name="specialLoginForm" scope="session">
-            <forward name="search" path="/OLDPAGES/Search.jsp"/>
+            <forward name="search" path="/Search.jsp"/>
         </action>
     </action-mappings>
     

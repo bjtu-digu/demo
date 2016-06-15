@@ -6,6 +6,7 @@
 package com.struts.action;
 
 import com.Module.MsgModule;
+import com.Module.UserModule;
 import com.struts.actionForm.MsgForm;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -29,6 +30,7 @@ public class MsgAction extends Action {
         String user_id = msgForm.getUser_id();
         String msg_id = msgForm.getMsg_id();
         String msg = msgForm.getMsg();
+        String user_name = msgForm.getUser_name();
         //如果有消息穿过来
         if (msg != null && msg.length() != 0) {
             String UserName = "";
@@ -42,11 +44,14 @@ public class MsgAction extends Action {
                 }
             }
             //插入一条普通消息
-            MsgModule.Msg(msg, "1", MsgModule.getUserID(UserName), user_id);
+            if(user_id != null)
+                MsgModule.Msg(msg, "1", MsgModule.getUserID(UserName), user_id);
+            else if(user_name != null)
+                MsgModule.Msg(msg, "1", MsgModule.getUserID(UserName), UserModule.getUserID(user_name));
             //如果是回复，转到那个人的页面，如果不是回复，则转到自己的页面
             if (msg_id == null) {
                 //response.sendRedirect("user?user_id=" + user_id);
-                ActionForward newForward = new ActionRedirect("user.do?user_id=" + user_id);
+                ActionForward newForward = new ActionRedirect("user.do?user_id=" + MsgModule.getUserID(UserName));
                 return newForward;
             } else {
                 //System.out.println("?");

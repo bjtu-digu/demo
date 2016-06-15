@@ -280,6 +280,9 @@ public class UserCtrl extends Ctrl {
     public String getSenderName(int index) {
         return UserModule.getUserInfo(getMsgSenderId(index));
     }
+    public String getMsgReaderId(int index){
+        return String.valueOf(Msg.get(index).getReader_id());
+    }
     //获取消息时间
 
     public String getMsgDate(int index) {
