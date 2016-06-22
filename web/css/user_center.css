@@ -1,0 +1,147 @@
+body {
+    background-color: rgb(38,38,38);
+    font-family: "微软雅黑","宋体",Arial;
+    font-size: 1.4em;
+    line-height: 26px;
+}
+.form-group {
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.input-group-addon, .form-control {
+    background-color: transparent;
+    border-color: transparent;
+    -webkit-border-radius: 0;
+    box-shadow: 0 0 0 #ffffff;
+}
+
+.title{
+	background-image:url(../img/logo_title.jpg);
+	-webkit-background-size: 1250px 160px;
+}
+
+
+.footer-log {
+    color: rgb(157,157,157);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+
+}
+
+.footer-log a {
+    color: rgb(157,157,157);
+    padding-left: 10px;
+    margin-left: 10px;
+    border-left: 1.5px solid rgb(157,157,157);
+}
+
+.footer-log a:hover{
+    color: #fff;
+    text-decoration: none;
+}
+
+
+.content {
+    padding-top: 56px;
+    position: relative;
+    margin: 0 auto;
+    width: 950px;
+}
+
+h2{
+    text-align: center;
+    color: rgb(157,157,157);
+}
+
+hr{
+    border: 1px solid gray;
+}
+
+.clearfix {
+    zoom: 1;
+}
+
+.page-header h1{
+    color: #777;
+}
+
+.page-header{
+    border-bottom: 1px solid #777;
+}
+
+li a{
+    color: #777;
+}
+
+li a:hover{
+    color: #777;
+}
+
+.nav-tabs li{
+    border-radius: 1px;
+    background-color: #F2F2F2;
+}
+
+.nav-tabs{
+    margin-bottom: 10px;
+}
+
+.asidePanel {
+    margin-right: 0;
+}
+
+.aside {
+    background-color: #F2F2F2;
+    border: 1px solid #dfdfdf;
+    box-shadow: 0 1px 1px rgba(0,0,0,.05);
+}
+
+.fl{
+    float: left;
+}
+
+.mainLeft {
+    float: left;
+    margin-bottom: 50px;
+    margin-left: 0;
+}
+
+.panel{
+    border:none;
+    border-radius: 1px;
+    background-color: #F2F2F2;
+    padding-left: 10px;
+}
+
+.row{
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.tag{
+    text-align: center;
+    border: 1px solid #777
+}
+
+.mab-p-i-avatar {
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.mab-p-content{
+    float: left;
+    padding-left: 15px;
+}
+
+.mab-p-i-time{
+    color: #777;
+    float: right;
+    padding-right: 15px;
+}
+

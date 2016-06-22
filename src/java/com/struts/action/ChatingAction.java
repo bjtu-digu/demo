@@ -5,7 +5,9 @@
  */
 package com.struts.action;
 
+import com.Module.ChatModule;
 import com.Module.MsgModule;
+import com.Module.UserModule;
 import com.struts.actionForm.ChatingForm;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -35,13 +37,12 @@ public class ChatingAction extends Action {
                 }
             }
         }
-//        String bar_id = request.getParameter("bar_id");
-//        String msg = request.getParameter("msg");
+        
         String bar_id = chating.getBar_id();
         String msg = chating.getMsg();
-        String sql = "insert into chat(user_id,bar_id,msg) values('" + MsgModule.getUserID(UserName) + "','" + bar_id + "','" + msg + "')";
-        //DBCore.Execute(sql);
-        //response.sendRedirect(request.getHeader("Referer"));
+        String user_id = UserModule.getUserID(UserName);
+        ChatModule.addChat(user_id, bar_id, msg);
+        
         ActionForward actionForward = new ActionForward(request.getHeader("Referer"));
         actionForward.setRedirect(true);
         return actionForward; 

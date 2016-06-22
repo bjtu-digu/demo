@@ -5,11 +5,9 @@
  */
 package com.struts.action;
 
+import com.MD5.MD5Util;
 import com.Module.LoginModule;
 import com.struts.actionForm.LoginForm;
-import java.io.PrintWriter;
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -17,7 +15,6 @@ import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
-import org.hibernate.SessionFactory;
 
 /**
  *
@@ -31,6 +28,8 @@ public class LoginAction extends Action {
         LoginForm form1 = (LoginForm) form;
         String name = form1.getName();
         String pass = form1.getPass();
+        
+        pass = MD5Util.encode(pass);
         int back = LoginModule.login(name, pass);
         
         String alert = "";

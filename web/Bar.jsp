@@ -1,3 +1,4 @@
+<%@page import="java.util.Random"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="com.Control.BarCtrl"%>
 <!DOCTYPE html>
@@ -43,10 +44,15 @@
             } else {
                 oAjax = new ActiveXObject("Microsoft.XMLHTTP");
             }
-            <%
-        out.print("url='chat?bar_id=" + barCtrl.getBarId() + "'");
-            %>
+            
+
             function getInfo() {
+                <%
+                    out.print("url='http://localhost:9000/chat?bar_id=" + barCtrl.getBarId() + "'");
+                %>
+                var rand = Math.random();
+                url += "&i=" + rand;
+
                 //2.连接服务器  
                 oAjax.open('GET', url, true);   //open(方法, url, 是否异步)
 
@@ -57,7 +63,8 @@
                 oAjax.onreadystatechange = function () {  //OnReadyStateChange事件
                     if (oAjax.readyState == 4) {  //4为完成
                         if (oAjax.status == 200) {    //200为成功
-                            document.getElementById('change').innerHTML = oAjax.responseText;
+                            var parsedJson = jQuery.parseJSON(oAjax.responseText);
+                            document.getElementById('change').innerHTML = parsedJson.msg;
                         } else {
                             if (fnFaild) {
                                 fnFaild();
@@ -67,7 +74,7 @@
                 };
             }
 
-            setInterval("getInfo()", 500);
+            setInterval(getInfo, 1000);
 
         </script>
 
@@ -126,7 +133,7 @@
                                     if (UserName.equals("") || UserName.length() == 0) {
                                         out.print("<li>"
                                                 + "	<div class='navbar-form'>"
-                                                + "<a href='Login.jsp' onClick='Login()'><button class='btn'>登录</button></a>"+ "</form>"
+                                                + "<a href='Login.jsp' onClick='Login()'><button class='btn'>登录</button></a>" + "</form>"
                                                 + "</li>"
                                                 + "<li><a href='Register.jsp'>注册</a></li>");
                                     } else {
@@ -135,7 +142,7 @@
                                                 + UserName
                                                 + "<span class='caret'></span></a>"
                                                 + "<ul class='dropdown-menu' role='menu' aria-labelledby='dropdownMenu1'>"
-                                                + "<li><a href='user?user_id=" + barCtrl.getUserID1(UserName) + "'>用户中心</a></li>"
+                                                + "<li><a href='user.do?user_id=" + barCtrl.getUserID1(UserName) + "'>用户中心</a></li>"
                                                 + "<li><a href='logout.do'>注销</a></li>"
                                                 + "<li role='separator' class='divider'></li>"
                                                 + "</ul>"
@@ -268,7 +275,7 @@
                             out.print("<article class='mab-panel'>"
                                     + "<div class='mab-p-info'>"
                                     + "<a href='user?user_id=" + barCtrl.getPosterId(i) + "'>"
-                                    + "<img class='mab-p-i-avatar' src='#'>"
+                                    + "<img class='mab-p-i-avatar' src='img/head.png'>"
                                     + "<span class='mab-p-i-name'>" + barCtrl.getUserName((barCtrl.getPosterId(i))) + "</span>"
                                     + "</a>"
                                     + "<div class='mab-p-i-time'>6小时前</div>"
@@ -387,64 +394,60 @@
             <!--mainLeft-->
 
             <div class="asidePanel fl">
-                <div class="aside" hidden>
+                <div class="aside">
                     <span class="glyphicon glyphicon-comment"></span>
                     <label>聊天室</label>
-                    <div style="margin-top: 10px;height: 300px; border-top: 1px solid #777" class="pre-scrollable">
-                        <!--聊天内容框-->
+                    <!--<div style="margin-top: 10px;height: 300px; border-top: 1px solid #777" class="pre-scrollable">
+                    <!--聊天内容框
 
-                        <div style="margin:10px 0;">
-                            <a href="#">XXX说：</a>
-                            &nbsp;&nbsp;
-                            <span>今天天气真好</span>
-                        </div>
-                        <div style="margin:10px 0;">
-                            <a href="#">XXX说：</a>
-                            &nbsp;&nbsp;
-                            <span>今天天气真好</span>
-                        </div>
-                        <div style="margin:10px 0;">
-                            <a href="#">XXX说：</a>
-                            &nbsp;&nbsp;
-                            <span>今天天气真好</span>
-                        </div>
-                        <div style="margin:10px 0;">
-                            <a href="#">XXX说：</a>
-                            &nbsp;&nbsp;
-                            <span>今天天气真好</span>
-                        </div>
-                        <div style="margin:10px 0;">
-                            <a href="#">XXX说：</a>
-                            &nbsp;&nbsp;
-                            <span>今天天气真好</span>
-                        </div>
-                        <div style="margin:10px 0;">
-                            <a href="#">XXX说：</a>
-                            &nbsp;&nbsp;
-                            <span>今天天气真好</span>
-                        </div>
+                    <div style="margin:10px 0;">
+                        <a href="#">XXX说：</a>
+                        &nbsp;&nbsp;
+                        <span>今天天气真好</span>
                     </div>
-                    <%-- 
-                            //如果没登陆就不输出
-                            if(!(UserName.equals("")||UserName.length() == 0)){
-                                    out.print("<div style='margin-top: 10px;height: 300px; border-top: 1px solid #777' class='pre-scrollable'>"
-                                                    +"<div style='margin:10px 0;'>"
-                                                        +<div style="margin:10px 0;">"
-                                                                    <a href='#''>XXX说：</a>
-                                                                    &nbsp;&nbsp;
-                                                                    <span>今天天气真好</span>
-                                                            </div>");
-                                    out.print("<form role='chating' action = 'chating.do' method = 'post'>");
-                                    out.print("<input type='text' name = 'bar_id' style='display:none' value ="+barCtrl.getBarId()+" >" );
-                                    out.print("<input name='msg' type='text' class='form-control' placeholder='说点什么'>");
-                                    out.print("<span class='input-group-btn'>");
-                                    out.print("<button class='btn btn-info' type='submit'>发送</button>");
-                                    out.print("</span>");
-                                    out.print("</form>");
-                                    out.print("</div><!-- /input-group ");
-                            }
-                    --%>
-                    <div style="margin-top: 10px;" class="input-group">
+                    <div style="margin:10px 0;">
+                        <a href="#">XXX说：</a>
+                        &nbsp;&nbsp;
+                        <span>今天天气真好</span>
+                    </div>
+                    <div style="margin:10px 0;">
+                        <a href="#">XXX说：</a>
+                        &nbsp;&nbsp;
+                        <span>今天天气真好</span>
+                    </div>
+                    <div style="margin:10px 0;">
+                        <a href="#">XXX说：</a>
+                        &nbsp;&nbsp;
+                        <span>今天天气真好</span>
+                    </div>
+                    <div style="margin:10px 0;">
+                        <a href="#">XXX说：</a>
+                        &nbsp;&nbsp;
+                        <span>今天天气真好</span>
+                    </div>
+                    <div style="margin:10px 0;">
+                        <a href="#">XXX说：</a>
+                        &nbsp;&nbsp;
+                        <span>今天天气真好</span>
+                    </div>
+                </div>-->
+                    <%
+                        //如果没登陆就不输出
+                        if (!(UserName.equals("") || UserName.length() == 0)) {
+                            out.print("<div id='change' style='margin-top: 10px;height: 300px; border-top: 1px solid #777' class='pre-scrollable'><!--聊天内容框-->");
+                            out.print("</div>");
+                            out.print("<div style='margin-top: 10px;' class='input-group'>");
+                            out.print("<form role='chating' action = 'chating.do' method = 'post'>");
+                            out.print("<input type='text' name = 'bar_id' style='display:none' value =" + barCtrl.getBarId() + " >");
+                            out.print("<input name='msg' type='text' class='form-control' placeholder='说点什么'>");
+                            out.print("<span class='input-group-btn'>");
+                            out.print("<button class='btn btn-info' type='submit'>发送</button>");
+                            out.print("</span>");
+                            out.print("</form>");
+                            out.print("</div><!-- /input-group -->");
+                        }
+                    %>
+                    <!--<div style="margin-top: 10px;" class="input-group">
                         <input type="text" class="form-control" placeholder="说点什么">
                         <span class="input-group-btn">
                             <button class="btn btn-primary" type="button">发送</button>

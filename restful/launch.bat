@@ -1,0 +1,1 @@
+java -jar drop.jar server hello-world.yml

@@ -7,10 +7,7 @@
     <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/digu</property>
     <property name="hibernate.connection.username">root</property>
     <property name="hibernate.connection.password">root</property>
-<<<<<<< HEAD
-=======
-    <property name="connection.characterEncoding">utf8</property> 
->>>>>>> develop
+    <property name="connection.characterEncoding">utf8</property>
     <mapping resource="Hibernate/user.hbm.xml"/>
     <mapping resource="Hibernate/bar.hbm.xml"/>
     <mapping resource="Hibernate/chat.hbm.xml"/>
@@ -21,6 +18,6 @@
     <mapping resource="Hibernate/star_bar.hbm.xml"/>
     <mapping resource="Hibernate/star_user.hbm.xml"/>
     <mapping resource="Hibernate/teacher.hbm.xml"/>
-   
+    <mapping resource="Hibernate/admin.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>

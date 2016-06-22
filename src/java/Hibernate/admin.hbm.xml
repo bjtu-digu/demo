@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="Hibernate.admin" table="admin">
+        <id column="admin_id" name="admin_id">
+            <generator class="increment"/>
+        </id>
+        <property column="admin_name" name="admin_name"/>
+        <property column="password" name="password"/>
+    </class>
+</hibernate-mapping>

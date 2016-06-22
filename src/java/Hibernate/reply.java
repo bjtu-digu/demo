@@ -19,6 +19,7 @@ public class reply {
     String reply_msg;
     int user_id;
     int exist;
+    int available;
 
     public reply(int reply_id, int bar_id, int post_id, Date reply_date, String reply_msg, int user_id, int exist) {
         this.reply_id = reply_id;
@@ -88,5 +89,14 @@ public class reply {
     public void setExist(int exist) {
         this.exist = exist;
     }
+
+    public void setAvailable(int available) {
+        this.available = available;
+    }
+
+    public int getAvailable() {
+        return available;
+    }
+    
     
 }

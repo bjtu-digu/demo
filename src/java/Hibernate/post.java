@@ -21,6 +21,7 @@ public class post {
     Date post_date;
     String last_reply;
     int exist;
+    int available;
 
     public post(Date last_date, int post_id, int bar_id, int user_id, String post_name, String post_msg, Date post_date, String last_reply, int exist) {
         this.last_date = last_date;
@@ -107,6 +108,14 @@ public class post {
 
     public void setExist(int exist) {
         this.exist = exist;
+    }
+
+    public void setAvailable(int available) {
+        this.available = available;
+    }
+
+    public int getAvailable() {
+        return available;
     }
     
     

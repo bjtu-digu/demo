@@ -18,6 +18,11 @@
         <form-bean name="postingForm" type="com.struts.actionForm.PostingForm"/>
         <form-bean name="postForm" type="com.struts.actionForm.PostForm"/>
         <form-bean name="replyForm" type="com.struts.actionForm.ReplyForm"/>
+        <form-bean name="userForm" type="com.struts.actionForm.UserForm"/>
+        <form-bean name="barForm" type="com.struts.actionForm.BarForm"/>
+        <form-bean name="msgForm" type="com.struts.actionForm.MsgForm"/>
+        <form-bean name="operatorForm" type="com.struts.actionForm.OperatorForm"/>
+        <form-bean name="specialLoginForm" type="com.struts.actionForm.SpecialLoginForm"/>
     </form-beans>
     
     <global-exceptions>
@@ -32,12 +37,12 @@
         <action path="/Welcome" forward="/welcomeStruts.jsp"/>
         <action path="/login" type="com.struts.action.LoginAction"
                 name="loginForm" scope="request">
-            <forward name="search" path="/OLDPAGES/Search.jsp"/>
+            <forward name="search" path="/Search.jsp"/>
             <forward name="self" path="/Login.jsp"/>
         </action>
         <action path="/register" type="com.struts.action.RegisterAction"
                 name="registerForm" scope="request">
-            <forward name="search" path="/OLDPAGES/Search.jsp"/>
+            <forward name="search" path="/Search.jsp"/>
             <forward name="self" path="/Register.jsp"/>
         </action>
         <action path="/search" type="com.struts.action.SearchAction"
@@ -65,18 +70,47 @@
         <action path="/chating" type="com.struts.action.ChatingAction"
                 name="chatingForm" scope="request">
         </action>
+        <action path="/chat" type="com.struts.action.ChatAction"
+                name="chatingForm" scope="request">
+        </action>
         <action path="/posting" type="com.struts.action.PostingAction"
                 name="postingForm" scope="request">
         </action>
         <action path="/post" type="com.struts.action.PostAction"
                 name="postForm" scope="session">
-            <forward name="self" path="/OLDPAGES/Post.jsp"/>
+            <forward name="self" path="/Post.jsp"/>
         </action>
         <action path="/reply" type="com.struts.action.ReplyAction"
                 name="replyForm" scope="request">
         </action>
         <action path="/logout" type="com.struts.action.LogoutAction"
                 scope="session">
+        </action>
+        <action path="/user" type="com.struts.action.UserAction"
+                name="userForm" scope="session">
+            <forward name="user" path="/User.jsp"/>
+        </action>
+        <action path="/bar" type="com.struts.action.BarAction"
+                name="barForm" scope="session">
+            <forward name="bar" path="/Bar.jsp"/>
+        </action>
+        <action path="/msg" type="com.struts.action.MsgAction"
+                name="msgForm" scope="request">
+            <forward name="msg" path="/Msg.jsp"/>
+        </action>
+        <action path="/adminLogin" type="com.struts.action.AdminLoginAction"
+                name="loginForm" scope="request">
+            <forward name="admin" path="/Admin.jsp"/>
+            <forward name="self" path="/AdminLogin.jsp"/>
+        </action>
+        <action path="/operator" type="com.struts.action.OperatorAction"
+                name="operatorForm" scope="session">
+            <forward name="admin" path="/Admin.jsp"/>
+            <forward name="login" path="/AdminLogin.jsp"/>
+        </action>
+        <action path="/specialLogin" type="com.struts.action.SpecialLoginAction"
+                name="specialLoginForm" scope="session">
+            <forward name="search" path="/Search.jsp"/>
         </action>
     </action-mappings>
     

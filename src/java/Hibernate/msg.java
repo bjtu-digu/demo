@@ -5,6 +5,8 @@
  */
 package Hibernate;
 
+import java.util.Date;
+
 /**
  *
  * @author zqhPC
@@ -18,6 +20,7 @@ public class msg {
     int reader_id;
     int read;
     int exist;
+    Date msg_date;
 
     public int getMsg_id() {
         return msg_id;
@@ -86,7 +89,7 @@ public class msg {
     public msg() {
     }
 
-    public msg(int msg_id, String msg, String add_msg, String type, int sender_id, int reader_id, int read, int exist) {
+    public msg(int msg_id, String msg, String add_msg, String type, int sender_id, int reader_id, int read, int exist, Date msg_date) {
         this.msg_id = msg_id;
         this.msg = msg;
         this.add_msg = add_msg;
@@ -95,7 +98,18 @@ public class msg {
         this.reader_id = reader_id;
         this.read = read;
         this.exist = exist;
+        this.msg_date = msg_date;
     }
+
+    public Date getMsg_date() {
+        return msg_date;
+    }
+
+    public void setMsg_date(Date msg_date) {
+        this.msg_date = msg_date;
+    }
+    
+    
     
     
 }

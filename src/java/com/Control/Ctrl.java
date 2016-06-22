@@ -7,16 +7,16 @@ import javax.servlet.http.HttpServletRequest;
 
 public class Ctrl {
 	
-	//�������İ�װ����
+	//
 	public String MakeUserTips(String id,String name){
 		return MakeATips("user?id="+id, name);
 	}
-	//�����Ӱ�װ����
+	//
 	public String MakeATips(String address,String value){
 		return MakeSimpleTips("a", "href", address, value);
 	}
 	
-	//�����԰�װ����
+	//
 	public String MakeSimpleTips(String name,String attibute,String params,String value){
 		ArrayList<String> get = new ArrayList<String>();
 		get.add(attibute);
@@ -24,7 +24,7 @@ public class Ctrl {
 		return MakeTips(name, get, value);
 	}
 	
-	//Ԫ��װ����
+	//
 	public String MakeTips(String name,ArrayList<String> attribute,String value){
 		String back = "";
 		back += "<" + name;
@@ -40,7 +40,7 @@ public class Ctrl {
 		return back;
 	}
 	
-	//����
+	//
 	public String NewLine(){
 		return "<br/>";
 	}

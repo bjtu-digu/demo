@@ -19,6 +19,7 @@ public class bar {
     String bar_name;
     Date create_time;
     int bar_head;
+    int available;
 
     public int getBar_id() {
         return bar_id;
@@ -88,5 +89,15 @@ public class bar {
     public void setBar_head(int bar_head) {
         this.bar_head = bar_head;
     }
+
+    public void setAvailable(int available) {
+        this.available = available;
+    }
+
+    public int getAvailable() {
+        return available;
+    }
+    
+    
     
 }

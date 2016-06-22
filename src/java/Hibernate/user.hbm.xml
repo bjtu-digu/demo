@@ -13,5 +13,6 @@
   <property column="is_teacher" name="is_teacher"/>
   <property column="is_manager" name="is_manager"/>
   <property column="exist" name="exist"/>
+  <property column="available" name="available"/>
 </class>
 </hibernate-mapping>

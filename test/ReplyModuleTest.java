@@ -1,4 +1,4 @@
-package test.Module;
+
 
 import com.Module.ReplyModule;
 import junit.framework.TestCase;
@@ -6,7 +6,7 @@ import junit.framework.TestCase;
 public class ReplyModuleTest extends TestCase {
 
 	public void testReply() {
-		// Ô­º¯ÊýÎÞ·µ»ØÖµ ºöÂÔ²âÊÔ
+		// Ô­ï¿½ï¿½ï¿½ï¿½ï¿½Þ·ï¿½ï¿½ï¿½Öµ ï¿½ï¿½ï¿½Ô²ï¿½ï¿½ï¿½
 	}
 
 	public void testGetUserID() {

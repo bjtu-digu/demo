@@ -3,16 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
-            <file>file:/D:/ProjectForNetbeans/demo/src/java/HibernateUtil/test.java</file>
-=======
-            <file>file:/G:/大三/digu/web/OLDPAGES/Post.jsp</file>
-            <file>file:/G:/大三/digu/src/java/com/struts/action/StarBarAction.java</file>
-            <file>file:/G:/大三/digu/web/Login.jsp</file>
-            <file>file:/G:/大三/digu/web/WEB-INF/struts-config.xml</file>
-            <file>file:/G:/大三/digu/src/java/com/struts/action/LogoutAction.java</file>
-            <file>file:/G:/大三/digu/web/OLDPAGES/Search.jsp</file>
->>>>>>> develop
+            <file>file:/G:/大三/digu/web/Admin.jsp</file>
+            <file>file:/G:/大三/digu/web/Msg.jsp</file>
+            <file>file:/G:/大三/digu/web/Search.jsp</file>
+            <file>file:/G:/大三/digu/web/User.jsp</file>
+            <file>file:/G:/大三/digu/src/java/com/Control/SearchCtrl.java</file>
         </group>
     </open-files>
 </project-private>
