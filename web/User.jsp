@@ -212,11 +212,11 @@
                                         out.print("<div class='mab-p-content'>");
                                         if (!userCtrl.getUserName1(userCtrl.getMsgSenderId(i)).equals(UserName) ) {
                                             out.print("<p>&nbsp;&nbsp;<a href='msg.do?msg_id=" + userCtrl.getMsgId(i) + "&user_id=" + userCtrl.getMsgSenderId(i) + "'>"
-                                                    + userCtrl.getUserName1(userCtrl.getMsgSenderId(i)) + "</a>&nbsp;&nbsp;对你说&nbsp;&nbsp;<a href='msg.do?msg_id=" + userCtrl.getMsgId(i) + "&user_id=" + userCtrl.getMsgSenderId(i) + "'>" + userCtrl.getMsgMsg(i)
+                                                    + "Secret" + "</a>&nbsp;&nbsp;对你说&nbsp;&nbsp;<a href='msg.do?msg_id=" + userCtrl.getMsgId(i) + "&user_id=" + userCtrl.getMsgSenderId(i) + "'>" + userCtrl.getMsgMsg(i)
                                                     + "</a></p>");
                                         } else {
                                             out.print("<p>你对&nbsp;&nbsp;<a href='msg.do?msg_id=" + userCtrl.getMsgId(i) + "&user_id=" + userCtrl.getMsgReaderId(i) + "'>"
-                                                    + userCtrl.getUserName1(userCtrl.getMsgReaderId(i)) + "</a>&nbsp;&nbsp;说&nbsp;&nbsp;<a href='msg.do?msg_id=" + userCtrl.getMsgId(i) + "&user_id=" + userCtrl.getMsgSenderId(i) + "'>" + userCtrl.getMsgMsg(i)
+                                                    + "Secret" + "</a>&nbsp;&nbsp;说&nbsp;&nbsp;<a href='msg.do?msg_id=" + userCtrl.getMsgId(i) + "&user_id=" + userCtrl.getMsgSenderId(i) + "'>" + userCtrl.getMsgMsg(i)
                                                     + "</a></p>");
                                         }
                                         out.print("</div>");

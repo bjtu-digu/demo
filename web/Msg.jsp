@@ -109,7 +109,7 @@
 	<div class="container">
 		<div class="content col-md-4 col-md-push-4 col-xs-12 col-sm-12">
 		<%
-			out.print("<br><label>To " + msgCtrl.getUserName() + ":</label> ");
+			out.print("<br><label>To " + "Secret" + ":</label> ");
 			out.print("<form role='message' action = 'msg.do' method = 'post'>");
 			out.print("<div style='margin-top: 10px;''>");
 			out.print("<input type='text' name = 'user_id' style='display:none' value ="+user_id+" >");
